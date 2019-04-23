@@ -18,11 +18,11 @@ app.use(express.static(path.join(__dirname, '/client/public')));
 
 //////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
 
-// An api endpoint that returns a short list of items
+// An api endpoint that returns a short list of results
 app.get('/api/getList', (req,res) => {
     var list = ["Will", "Dorothy", "Ry"];
     res.json(list);
-    console.log('Sent list of items');
+    console.log('Sent list of results');
 });
 
 // Handles any requests that don't match the ones above
