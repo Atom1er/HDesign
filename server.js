@@ -3,6 +3,7 @@ var path = require('path');
 var passport = require('passport');
 var cloudinary = require('cloudinary');
 var users = require('./models/users');
+var Keys = require('./config/keys');
 
 
 
@@ -50,6 +51,13 @@ cloudinary.v2.api.resources_by_tag('cat',
     );
 
 });
+
+cloudinary.config({
+    cloud_name: Keys.cloud_name,
+    api_key: Keys.api_key,
+    api_secret: Keys.api_secret
+}
+)
 
 //TO DO: database routes//
 app.get("/api/users/favorites", (req, res) => {
