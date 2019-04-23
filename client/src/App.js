@@ -6,6 +6,9 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import List from './components/List';
+import ApiPhotos from './components/ApiPhotos';
+import PhotoWidgetUploader from './components/PhotoWidgetUploader';
+import UsersDb from './components/UsersDb';
 
 class App extends Component {
   render() {
@@ -16,9 +19,13 @@ class App extends Component {
           <Route path='/list' component={List}/>
           <Route exact path='/login' component={LogIn}/>
           <Route path='/signup' component={SignUp}/>
+          <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
+          <Route exact path="/apiPhotos" component={ApiPhotos}/>
+          <Route exact path="/usersDb" component={UsersDb}/>
         </Switch>
       </div>
     )
+
     return (
       <Switch>
         <App/>

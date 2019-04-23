@@ -14,6 +14,26 @@ class Home extends Component {
             My List
         </button>
       </Link>
+
+      <Link to='./apiPhotos'>
+        <button variant="raised">
+            Photos
+        </button>
+      </Link>
+
+      <Link to='./usersDb'>
+        <button variant="raised">
+            Users
+        </button>
+      </Link>
+
+      <Link 
+      to='./photoWidgetUploader'
+      className={window.location.pathname === "/PhotoWidgetUploader" ? "nav-link active" : "nav-link"}>
+        <button variant="raised">
+            Photo upload
+        </button>
+      </Link>
     </div>
     );
   }
