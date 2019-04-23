@@ -6,6 +6,10 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import List from './components/List';
+import Navy from './components/Navy';
+
+
+
 
 class App extends Component {
   render() {
@@ -16,6 +20,8 @@ class App extends Component {
           <Route path='/list' component={List}/>
           <Route exact path='/login' component={LogIn}/>
           <Route path='/signup' component={SignUp}/>
+          <Route path='/navy' component={Navy}/>
+       
         </Switch>
       </div>
     )
