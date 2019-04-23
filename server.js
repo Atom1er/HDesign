@@ -1,10 +1,15 @@
 var express = require('express');
 var path = require('path');
+var passport = require('passport'); 
 
 var app = express();
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+app.use(passport.initialize()); 
+
+require("./config/passport");
 
 var PORT = process.env.PORT || 5005;
 
