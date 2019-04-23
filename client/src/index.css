@@ -15,7 +15,6 @@ code {
     monospace;
 }
 
-<<<<<<< HEAD
 nav{
   background-color: rgb(90, 221, 221);
   
@@ -176,7 +175,6 @@ nav{
 
 
 /* login */
-=======
 /*************************** Google SignIn *****************************/
 
 a {
@@ -209,4 +207,3 @@ a {
   height: 37px;
   display: inline-block;
  }
->>>>>>> 90390982d29b34baae7b98831b600c2ec5facad4

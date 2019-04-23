@@ -21,14 +21,11 @@
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mysql2": "^1.6.5",
-<<<<<<< HEAD
     "react-bootstrap": "^1.0.0-beta.8",
     "react-parallax": "^2.2.0",
     "react-scroll-parallax": "^2.1.2",
-=======
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
->>>>>>> 90390982d29b34baae7b98831b600c2ec5facad4
     "sequelize": "^5.7.0",
     "yarn": "^1.15.2"
   }
