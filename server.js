@@ -39,14 +39,6 @@ app.get('/api/getList', (req, res) => {
     console.log('Sent list of items');
 });
 
-//setting up credentials
-cloudinary.config({
-    cloud_name: 'djq7sbvvq',
-    api_key: '868354955695991',
-    api_secret: 'YmFOcZ1vwOH7gImA7EoacXpxBT4'
-}
-)
-
 // TO DO: cloudinary photo cloud service API
 app.get('/api/get_photos/cat', (req, res) => {
 // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
