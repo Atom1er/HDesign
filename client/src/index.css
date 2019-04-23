@@ -165,7 +165,7 @@ nav{
 /* login */
 .login{
   background-image: url('https://images.pexels.com/photos/412389/pexels-photo-412389.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-  background-image: url('https://images.unsplash.com/photo-1545152771-8bfefbb12dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  /* background-image: url('https://images.unsplash.com/photo-1545152771-8bfefbb12dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); */
   /* height: 100%; */
   height: 750px; 
   background-position: center; 

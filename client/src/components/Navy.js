@@ -19,6 +19,11 @@ class Navy extends Component {
           <div class="logo">
 		<a tabindex="5" href="/us/en/">Gucci</a>
 
+{/* scroll up
+calculate scrolle up 
+fixed element position
+scroll event
+ */}
 
           <h1> 
             <i></i>
