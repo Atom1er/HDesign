@@ -40,13 +40,47 @@ app.get('/api/getList', (req, res) => {
     console.log('Sent list of items');
 });
 
+
 // TO DO: cloudinary photo cloud service API
 app.get('/api/get_photos/cat', (req, res) => {
-// cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
-cloudinary.v2.api.resources_by_tag('cat',
-       function (err, results) {
+    // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
+    cloudinary.v2.api.resources_by_tag('modern',
+        function (err, results) {
             // console.log(results)  
-            res.json(results);  
+            res.json(results);
+        }
+    );
+
+});
+
+app.get('/api/get_photos/cat', (req, res) => {
+    // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
+    cloudinary.v2.api.resources_by_tag('luxury',
+        function (err, results) {
+            // console.log(results)  
+            res.json(results);
+        }
+    );
+
+});
+
+app.get('/api/get_photos/cat', (req, res) => {
+    // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
+    cloudinary.v2.api.resources_by_tag('antique',
+        function (err, results) {
+            // console.log(results)  
+            res.json(results);
+        }
+    );
+
+});
+
+app.get('/api/get_photos/cat', (req, res) => {
+    // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
+    cloudinary.v2.api.resources_by_tag('decor',
+        function (err, results) {
+            // console.log(results)  
+            res.json(results);
         }
     );
 
