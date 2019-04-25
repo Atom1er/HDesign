@@ -2,8 +2,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+<<<<<<< HEAD
 import Home from './pages/Home';
 import Admin from './components/Admin';
+=======
+import Home from './components/Home/Home';
+>>>>>>> 4a57f16627831c531485544ba34ae0ea7a5c4c97
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import List from './components/List';

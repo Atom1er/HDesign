@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, '/client/public')));
 
 //////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
 
+<<<<<<< HEAD
 // TO DO: cloudinary photo cloud service API 
 
 // Getting images with tag 'modern'//
@@ -64,6 +65,13 @@ app.get('/api/get_photos/antique', (req, res) => {
             res.json(results);
         }
     );
+=======
+// An api endpoint that returns a short list of results
+app.get('/api/getList', (req,res) => {
+    var list = ["Will", "Dorothy", "Ry"];
+    res.json(list);
+    console.log('Sent list of results');
+>>>>>>> 4a57f16627831c531485544ba34ae0ea7a5c4c97
 });
 // Getting images with tag 'decor'//
 app.get('/api/get_photos/decor', (req, res) => {

@@ -5,7 +5,10 @@
   "proxy": "http://localhost:5005/",
   "dependencies": {
     "axios": "^0.18.0",
+<<<<<<< HEAD
     "cloudinary": "^1.14.0",
+=======
+>>>>>>> 4a57f16627831c531485544ba34ae0ea7a5c4c97
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
