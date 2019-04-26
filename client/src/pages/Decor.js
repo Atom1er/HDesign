@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Images from '../components/Images';
 // import './ApiPhotos.css';
 
-class Modern extends Component {
+class Decor extends Component {
     // Initialize the state
     state = {
         arrPhoto: []
@@ -15,7 +15,7 @@ class Modern extends Component {
 
     // Retrieves the list of items from the Express app
     getPhotos = () => {
-        fetch('/api/get_photos/modern')
+        fetch('/api/get_photos/decor')
             .then(res => res.json())
             .then(arrPhoto => this.setState({ arrPhoto: arrPhoto.resources }));
         console.log(this.state.list);
@@ -35,4 +35,4 @@ class Modern extends Component {
     }
 }
 
-export default Modern;
+export default Decor;
