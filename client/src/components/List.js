@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class List extends Component {
   // Initialize the state
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       list: []
@@ -17,8 +17,8 @@ class List extends Component {
   // Retrieves the list of results from the Express app
   getList = () => {
     fetch('/api/getList')
-    .then(res => res.json())
-    .then(list => this.setState({ list }))
+      .then(res => res.json())
+      .then(list => this.setState({ list }))
   }
 
   render() {
@@ -32,7 +32,7 @@ class List extends Component {
           <div>
             {/* Render the list of results */}
             {list.map((result) => {
-              return(
+              return (
                 <div>
                   {result}
                 </div>
@@ -40,11 +40,11 @@ class List extends Component {
             })}
           </div>
         ) : (
-          <div>
-            <h2>No List results Found</h2>
-          </div>
-        )
-      }
+            <div>
+              <h2>No List results Found</h2>
+            </div>
+          )
+        }
       </div>
     );
   }

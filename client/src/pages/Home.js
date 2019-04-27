@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
   render() {
     return (
+
       <div className="homey">
-        
+
         {/* <div className='img1'>nnn</div> */}
 
 

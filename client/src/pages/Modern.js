@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Images from '../components/Images';
-// import './ApiPhotos.css';
+import "./Pages.css";
 
 class Modern extends Component {
     // Initialize the state
     state = {
-        arrPhoto: []
+        arrPhoto: [],
+        showPhoto: 5,
+        showPhoto2: 10
     }
 
     // Fetch the list on first mount
@@ -22,15 +24,45 @@ class Modern extends Component {
     }
 
     render() {
-        const photosUrl = this.state.arrPhoto;
+
+        const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
+            (images) => <Images
+                id={images.public_id}
+                url={images.url}
+            />
+        )
+
+        const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
+            (images) => <Images
+                id={images.public_id}
+                url={images.url}
+            />
+        )
+
         return (
-            <div className="photo-container">
-                {photosUrl.map(images => (
-                    <Images
-                        id={images.public_id}
-                        url={images.url}
-                    />))}
+
+            <div className="modern-container">
+                <br />
+                <div className="row">
+                    <div className="col-1" />
+                    {photosUrl}
+                    <div className="col-1" />
+                </div>
+                <br />
+                <div className="jumbotron-fluid text-center">
+                    <h1>Modern</h1>
+                    <hr />
+                    <h3>World of modern</h3>
+                </div>
+                <br />
+                <div className="row">
+                    <div className="col-1" />
+                    {photosUrl2}
+                    <div className="col-1" />
+                </div>
+                <br />
             </div>
+
         );
     }
 }
