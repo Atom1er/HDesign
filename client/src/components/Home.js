@@ -10,13 +10,6 @@ class Home extends Component {
       <h1>ModernDesign</h1>
       {/* <div className='img1'>nnn</div> */}
 
-
-
-
-
-
-
-
 {/* parralax */}
 <main className="wrapper">
 <section className="section parallax bg3">
@@ -48,17 +41,6 @@ class Home extends Component {
     <h1>SO FWUFFY AWWW</h1>
   </section>
 </main>
-
-
-
-
-
-
-      {/* <Link to='./list'>
-        <button variant="raised">
-            My List
-        </button>
-      </Link> */}
     </div>
     );
   }
