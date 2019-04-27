@@ -71,7 +71,7 @@ app.get('/api/getList', (req, res) => {
     res.json(list);
     console.log('Sent list of items');
 });
-=======
+
 // TO DO: cloudinary photo cloud service API 
 
 // Getting images with tag 'modern'//

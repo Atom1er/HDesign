@@ -8,7 +8,6 @@ class Home extends Component {
     return (
     <div className="App">
       <h1>ModernDesign</h1>
-      {/* <div className='img1'>nnn</div> */}
 
 {/* parralax */}
 <main className="wrapper">
