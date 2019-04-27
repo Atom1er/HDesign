@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 class LogIn extends Component {
     render() {
       return (
-      <div className='login'>
+      <div className="App">
         <div>
           <div className='container-fluid login'>
         
+	
+         
           {/* <div class="wrapper">
     <form class="form-signin">       
       <h2 class="form-signin-heading">Please login</h2>
