@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class UsersDb extends Component {
@@ -14,9 +15,17 @@ class UsersDb extends Component {
 
     // Retrieves the list of items from the Express app
     getUsers = () => {
-        fetch('/api/users/favorites')
-            .then(res => res.json())
-            .then(usersFav => this.setState({ usersFav: usersFav[0] }));
+        axios.get('/api/db/favorites')
+        .then(res => {
+            console.log(res);
+            this.setState({usersFav: res.data[0]});
+        });
+        // fetch('/api/db/favorites')
+        //     .then(res => {
+        //         console.log(res)
+        //         this.setState({ usersFav: usersFav[0] })
+        //     }) //res.json
+        //     // .then(usersFav => );
        
     }
 

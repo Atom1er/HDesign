@@ -4,9 +4,9 @@ import './ApiPhotos.css';
 
 class ApiPhotos extends Component {
     // Initialize the state
-            state = {
-                arrPhoto: []
-            }
+    state = {
+        arrPhoto: []
+    }
 
     // Fetch the list on first mount
     componentDidMount() {
@@ -15,7 +15,7 @@ class ApiPhotos extends Component {
 
     // Retrieves the list of items from the Express app
     getPhotos = () => {
-        fetch('/api/get_photos/cat')
+        fetch('/api/get_photos/modern')
             .then(res => res.json())
             .then(arrPhoto => this.setState({ arrPhoto: arrPhoto.resources }));
         console.log(this.state.list);
