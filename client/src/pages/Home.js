@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        
+
         {/* <div className='img1'>nnn</div> */}
 
 

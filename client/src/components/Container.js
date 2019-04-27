@@ -2,7 +2,7 @@ import React from "react";
 
 const Container = props => (
 
-<div className="container-fluid border">{props.children}</div>
+<div className="app-container">{props.children}</div>
 
 );
 

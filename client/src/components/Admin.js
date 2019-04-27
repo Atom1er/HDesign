@@ -5,36 +5,36 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
   render() {
     return (
-    <div className="App">
-      <h1>Project Home</h1>
-      {/* Link to List.js */}
-      {/* Testing relation between express and React */}
-      <Link to='./list'>
-        <button variant="raised">
+      <div className="App">
+        <h1>Project Home</h1>
+        {/* Link to List.js */}
+        {/* Testing relation between express and React */}
+        <Link to='./list'>
+          <button variant="raised">
             My List
         </button>
-      </Link>
+        </Link>
 
-      <Link to='./apiPhotos'>
-        <button variant="raised">
+        <Link to='./apiPhotos'>
+          <button variant="raised">
             Photos
         </button>
-      </Link>
+        </Link>
 
-      <Link to='./usersDb'>
-        <button variant="raised">
+        <Link to='./usersDb'>
+          <button variant="raised">
             Users
         </button>
-      </Link>
+        </Link>
 
-      <Link 
-      to='./photoWidgetUploader'
-      className={window.location.pathname === "/PhotoWidgetUploader" ? "nav-link active" : "nav-link"}>
-        <button variant="raised">
+        <Link
+          to='./photoWidgetUploader'
+          className={window.location.pathname === "/PhotoWidgetUploader" ? "nav-link active" : "nav-link"}>
+          <button variant="raised">
             Photo upload
         </button>
-      </Link>
-    </div>
+        </Link>
+      </div>
     );
   }
 }
