@@ -42,7 +42,7 @@ plugins change
 .homey{
   margin: 0;
   padding: 0;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   font-family: 'Amatic SC', cursive;
 }
@@ -51,8 +51,8 @@ plugins change
   /* The height needs to be set to a fixed value for the effect to work.
    * 100vh is the full height of the viewport. */
   height: 100vh;
-  width: 100vmax;
- 
+  /* width: 100vmax; */
+  width: 100vw;
   /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
   overflow-x: hidden;
   /* Enable scrolling on the page. */
