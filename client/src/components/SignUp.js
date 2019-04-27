@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
-
+import queryString from "query-string";
 class SignUp extends Component {
+  
+  componentWillMount() {
+    var query = queryString.parse(this.props.location.search);
+    if (query.token) {
+      window.localStorage.setItem("jwt", query.token);
+      this.props.history.push("/");
+  }
+}
+
   render() {
     return (
       <div className="App">
         <h1>SignUp Page</h1>
         
 {/************************************ Google SignIn *******************************/}
-        <a href="/auth/google" class="button">
+        <a href="/auth/google" className="button">
           <div>
-            <span class="svgIcon t-popup-svg">
+            <span className="svgIcon t-popup-svg">
               <svg
-                class="svgIcon-use"
+                className="svgIcon-use"
                 width="25"
                 height="37"
                 viewBox="0 0 25 25"
               >
-                <g fill="none" fill-rule="evenodd">
+                <g fill="none" fillRule="evenodd">
                   <path
                     d="M20.66 12.693c0-.603-.054-1.182-.155-1.738H12.5v3.287h4.575a3.91 3.91 0 0 1-1.697 2.566v2.133h2.747c1.608-1.48 2.535-3.65 2.535-6.24z"
                     fill="#4285F4"
@@ -36,7 +45,7 @@ class SignUp extends Component {
                 </g>
               </svg>
             </span>
-            <span class="button-label">Sign in with Google</span>
+            <span className="button-label">Sign in with Google</span>
           </div>
         </a>
 {/************************************ Google SignIn *******************************/}
