@@ -6,19 +6,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: bisque; */
- 
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* 
+on scroll
+jquery
 
-nav{
-  background-color: rgb(90, 221, 221);
-  
-}
+
+plugins change 
+*/
+
 
 .img1{
   background-image: url('https://images.unsplash.com/photo-1521783988139-89397d761dce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80');
@@ -33,15 +35,24 @@ nav{
   position: relative; 
 }
 
-#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+/* #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
 #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;} */
 
+.homey{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Amatic SC', cursive;
+}
 /* para;lax */
 .wrapper {
   /* The height needs to be set to a fixed value for the effect to work.
    * 100vh is the full height of the viewport. */
   height: 100vh;
+  width: 100vmax;
+ 
   /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
   overflow-x: hidden;
   /* Enable scrolling on the page. */
@@ -189,7 +200,7 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
-  color: rgba(0, 0, 0, 0.84) !important;
+  color: rgba(201, 195, 195, 0.84) !important;
   fill: rgba(0, 0, 0, 0.84) !important;
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.05);
   font: inherit;

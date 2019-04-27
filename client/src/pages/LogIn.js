@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class LogIn extends Component {
     render() {
       return (
-      <div className="App">
+      <div className='login'>
         <div>
-          <div class='container-fluid login'>
+          <div className='container-fluid '>
         
 	
          

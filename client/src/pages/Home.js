@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="homey">
         
         {/* <div className='img1'>nnn</div> */}
 
@@ -15,8 +15,7 @@ class Home extends Component {
 
 
 
-
-
+<div class='container-fluid'>
         {/* parralax */}
         <main class="wrapper">
 
@@ -77,6 +76,8 @@ class Home extends Component {
         </button>
       </Link> */}
       </div>
+      </div>
+
     );
   }
 }
