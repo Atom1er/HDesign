@@ -5,7 +5,7 @@ class LogIn extends Component {
       return (
       <div className="App">
         <div>
-          <div class='container-fluid login'>
+          <div className='container-fluid login'>
         
 	
          

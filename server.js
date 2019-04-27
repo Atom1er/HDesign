@@ -5,7 +5,7 @@ var cloudinary = require('cloudinary');
 var users = require('./models/users');
 var Keys = require('./config/keys');
 
-
+require("./config/passport");
 
 var app = express();
 
@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(passport.initialize());
 
-require("./config/passport");
+
 
 var PORT = process.env.PORT || 5005;
 // Only for Deployment -HEROKU- Serve up static assets DO NOT TOUCHE !!!
@@ -32,6 +32,39 @@ app.listen(PORT, function () {
 
 
 //////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
+
+
+// Google Login ROUTE
+
+/* GET Google Authentication API. */
+// app.get(
+//     "/auth/google",
+//     passport.authenticate("google", { scope: ["profile", "email"] },
+//     ),
+//     redir
+// );
+// app.get(
+//     "/auth/google/callback",
+//     passport.authenticate("google", { 
+//         successRedirect: '/',
+//         failureRedirect: "/signup" }),
+//     function(req, res) {
+//         var token = req.user.token;
+//         console.log("user Token: "+token);
+//         res.json({ email: "", loggedin: true }) // so that react can redirect client
+//         // res.redirect("/admin");
+//         // res.redirect("http://localhost:3000?token=" + token);
+//     }
+// );
+
+app.get('/auth/google', passport.authenticate('google',{scope: 'email'}));
+
+app.get('/auth/google/callback', function() {
+    passport.authenticate('google', {
+        successRedirect: '/',
+        failureRedirect: '/signup'
+    });
+});
 
 // An api endpoint that returns a short list of items
 app.get('/api/getList', (req, res) => {
