@@ -43,7 +43,7 @@ class App extends Component {
                   <Route exact path='/login' component={LogIn}/>
                   <Route path='/signup' component={SignUp}/>
                   <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
-                  <Route exact path="/apiPhotos" component={ApiPhotos}/>
+                  {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
                   <Route exact path="/usersDb" component={UsersDb}/>
                   { window.location.origin === "http://localhost:3000" ? 
                     <Route exact path="/auth/google" component={RedirectGoogleAuth} />
