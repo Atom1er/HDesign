@@ -5,7 +5,7 @@ import axios from 'axios';
 class UsersDb extends Component {
     // Initialize the state
     state = {
-        usersFav:[]
+        usersFav: []
     }
 
     // Fetch the list on first mount
@@ -16,17 +16,17 @@ class UsersDb extends Component {
     // Retrieves the list of items from the Express app
     getUsers = () => {
         axios.get('/api/db/favorites')
-        .then(res => {
-            console.log(res);
-            this.setState({usersFav: res.data[0]});
-        });
+            .then(res => {
+                console.log(res);
+                this.setState({ usersFav: res.data[0] });
+            });
         // fetch('/api/db/favorites')
         //     .then(res => {
         //         console.log(res)
         //         this.setState({ usersFav: usersFav[0] })
         //     }) //res.json
         //     // .then(usersFav => );
-       
+
     }
 
     render() {

@@ -35,20 +35,17 @@ const Navbar = props => (
             </div>
             <div className="col-3 border text-center" style={{ padding: "20px", background: "green" }}>
                 <Link to="./luxury" style={{ textDecoration: "none", color: "white" }}>
-
-
                     {/* <button type="button" class="btn  btn-outline-warning   btn-lg">Luxury</button> */}
-                    {/* <h3>Luxury</h3>
-                </Link> */}
+                    <h3>Luxury</h3>
+                </Link>
             </div>
             <div className="col-3 border text-center" style={{ padding: "20px", background: "yellow" }}>
                 <Link to="./antique" style={{ textDecoration: "none", color: "white" }}>
-
                     {/* <button type="button" class="btn  btn-outline-warning   btn-lg">Antique</button> */}
-                    {/* <h3>Antique</h3> */}
-                {/* </Link>
-            </div> */}
-        {/* </div> */}
+                    <h3>Antique</h3>
+                </Link>
+            </div>
+        </div>
     </div>
 
 )
