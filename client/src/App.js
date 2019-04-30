@@ -29,32 +29,6 @@ class App extends Component {
 
   render() {
     const App = () => (
-<<<<<<< HEAD
-      <div>
-        <Container>
-        <Navbar />
-          <Switch>
-            <Route exact path='/' component={Home} />
-            
-            <Route exact path="/modern" component={Modern} />
-            <Route exact path="/decor" component={Decor} />
-            <Route exact path="/luxury" component={Luxury} />
-            <Route exact path="/antique" component={Antique} />
-            <Route exact path='/admin' component={Admin} />
-            <Route path='/list' component={List} />
-            <Route exact path='/login' component={LogIn} />
-            <Route path='/signup' component={SignUp}/>
-            <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader} />
-            {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
-            <Route exact path="/usersDb" component={UsersDb} />
-            {window.location.origin === "http://localhost:3000" ?
-              <Route exact path="/auth/google" component={RedirectGoogleAuth} />
-              : false}
-          </Switch>
-          <Footer />
-        </Container>
-      </div>
-=======
         <div>
           <Container>
           <Navbar />
@@ -78,7 +52,6 @@ class App extends Component {
               <Footer />
           </Container>
         </div>
->>>>>>> a595daf75dc830b7cd003f69adf076055eacb1b2
     )
     return (
 
