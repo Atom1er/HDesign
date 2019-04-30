@@ -2,14 +2,14 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
+import Home from './pages/Home';
 import Admin from './components/Admin';
+
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 
 import List from './components/List';
-import ApiPhotos from './components/ApiPhotos';
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 import UsersDb from './components/UsersDb';
 
@@ -20,7 +20,10 @@ import Decor from "./pages/Decor";
 import Luxury from "./pages/Luxury";
 import Antique from "./pages/Antique";
 import Container from "./components/Container";
+import "./components/Container.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 
 class App extends Component {
 
@@ -40,17 +43,16 @@ class App extends Component {
                   <Route exact path='/login' component={LogIn}/>
                   <Route path='/signup' component={SignUp}/>
                   <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
-                  <Route exact path="/apiPhotos" component={ApiPhotos}/>
+                  {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
                   <Route exact path="/usersDb" component={UsersDb}/>
                   { window.location.origin === "http://localhost:3000" ? 
                     <Route exact path="/auth/google" component={RedirectGoogleAuth} />
                   : false }
                 </Switch>
+              <Footer />
           </Container>
         </div>
     )
-
-
     return (
 
         <App />

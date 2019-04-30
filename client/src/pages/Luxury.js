@@ -5,7 +5,9 @@ import Images from '../components/Images';
 class Luxury extends Component {
     // Initialize the state
     state = {
-        arrPhoto: []
+        arrPhoto: [],
+        showPhoto: 5,
+        showPhoto2: 10
     }
 
     // Fetch the list on first mount
@@ -22,15 +24,41 @@ class Luxury extends Component {
     }
 
     render() {
-        const photosUrl = this.state.arrPhoto;
+
+        const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
+            (images) => <Images
+                id={images.public_id}
+                url={images.url}
+            />
+        )
+
+        const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
+            (images) => <Images
+                id={images.public_id}
+                url={images.url}
+            />
+        )
+
         return (
-            <div className="photo-container">
-                {photosUrl.map(images => (
-                    <Images
-                        id={images.public_id}
-                        url={images.url}
-                    />))}
+
+            <div>
+                <div className="row">
+                    <div className="col-1" />
+                    {photosUrl}
+                    <div className="col-1" />
+                </div>
+                <div className="jumbotron text-center">
+                    <h1>Luxury</h1>
+                    <hr />
+                    <h3>World of Luxury</h3>
+                </div>
+                <div className="row">
+                    <div className="col-1" />
+                    {photosUrl2}
+                    <div className="col-1" />
+                </div>
             </div>
+
         );
     }
 }
