@@ -13,16 +13,16 @@ const Footer = props => (
         <div className="row text-center">
             <div className="col-2"></div>
             <div className="col-2">
-                <h6>Dorothy<a href=""><i class="fab fa-github"></i></a></h6>
+                <h6>Dorothy<a href=""><i className="fab fa-github"></i></a></h6>
             </div>
             <div className="col-2">
-                <h6>Thomas<a href=""><i class="fab fa-github"></i></a></h6>
+                <h6>Thomas<a href=""><i className="fab fa-github"></i></a></h6>
             </div>
             <div className="col-2">
-                <h6>William<a href=""><i class="fab fa-github"></i></a></h6>
+                <h6>William<a href=""><i className="fab fa-github"></i></a></h6>
             </div>
             <div className="col-2">
-                <h6>Ry<a href="https://github.com/rnakada" target="_blank"><i class="fab fa-github"></i></a></h6>
+                <h6>Ry<a href="https://github.com/rnakada" target="_blank"><i className="fab fa-github"></i></a></h6>
             </div>
             <div className="col-2"></div>
         </div> */}
