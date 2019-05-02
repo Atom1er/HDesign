@@ -3,77 +3,25 @@ var path = require('path');
 var passport = require('passport');
 var cloudinary = require('cloudinary');
 var db = require('./models');
-var users = require('./models/users');
 var Keys = require('./config/keys');
-
-require("./config/passport");
-
 var app = express();
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(passport.initialize());
-
-
-
+require("./config/passport");
 var PORT = process.env.PORT || 5005;
 // Only for Deployment -HEROKU- Serve up static assets DO NOT TOUCHE !!!
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
-
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '/client/public')));
-
 // //Express Server Start
 // app.listen(PORT, function () {
 //     console.log('App listenning to port number : ' + PORT);
 // });
-
 //////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
-
-// Google Login ROUTE
-
-/* GET Google Authentication API. */
-// app.get(
-//     "/auth/google",
-//     passport.authenticate("google", { scope: ["profile", "email"] },
-//     ),
-//     redir
-// );
-// app.get(
-//     "/auth/google/callback",
-//     passport.authenticate("google", { 
-//         successRedirect: '/',
-//         failureRedirect: "/signup" }),
-//     function(req, res) {
-//         var token = req.user.token;
-//         console.log("user Token: "+token);
-//         res.json({ email: "", loggedin: true }) // so that react can redirect client
-//         // res.redirect("/admin");
-//         // res.redirect("http://localhost:3000?token=" + token);
-//     }
-// );
-
-app.get('/auth/google', passport.authenticate('google',{scope: 'email'}));
-
-app.get('/auth/google/callback', function() {
-    passport.authenticate('google', {
-        successRedirect: '/',
-        failureRedirect: '/signup'
-    });
-});
-
-// An api endpoint that returns a short list of items
-app.get('/api/getList', (req, res) => {
-    var list = ["Will", "Dorothy", "Ry"];
-    res.json(list);
-    console.log('Sent list of items');
-});
-
 // TO DO: cloudinary photo cloud service API 
-
 // Getting images with tag 'modern'//
 app.get('/api/get_photos/modern', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
@@ -114,6 +62,13 @@ app.get('/api/get_photos/decor', (req, res) => {
         }
     );
 });
+app.post('/api/cloud/public_id', (req, res) => {
+    var public = req.body.publicId;
+    console.log(public)
+    cloudinary.v2.uploader.destroy(public, function (error, result) {
+        console.log(result)
+    });
+})
 
 cloudinary.config({
     cloud_name: Keys.cloud_name,
@@ -121,40 +76,53 @@ cloudinary.config({
     api_secret: Keys.api_secret
 }
 )
-
 //TO DO: database routes//
+// Users database favorites//
 app.get("/api/db/favorites", (req, res) => {
     db.users.findAll({}).then((results) => {
         res.json(results);
-        console.log(results);
+        console.log("succes");
     });
 });
-
-
+// to store favorites in database //
+app.post("/api/db/favItems", (req, res) => {
+    db.favItems.create({
+        item_name: req.body.item_name
+    }).then((results) => {
+        res.json(results);
+        console.log("succes");
+    });
+});
+// to delete favorite items in database //
+app.post("/api/db/favItemsDelete", (req, res) => {
+    db.favItems.destroy({
+        where: {
+            item_name: req.body.item_name
+        }
+    }).then((results) => {
+        res.json(results);
+        console.log("succes");
+    });
+});
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + 'client/public/index.html'));
 });
-
-
-
 var syncOptions = { force: false };
-
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
+    syncOptions.force = true;
 }
-
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-    app.listen(PORT, function() {
-      console.log(
-        "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-        PORT,
-        PORT
-      );
+db.sequelize.sync(syncOptions).then(function () {
+    app.listen(PORT, function () {
+        console.log(
+            "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+            PORT,
+            PORT
+        );
     });
-  });
-  
-  module.exports = app;
+});
+
+module.exports = app;
