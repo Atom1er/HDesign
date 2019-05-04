@@ -93,7 +93,7 @@ h1{
 h2 {
    /* margin: 20px; */
    font-family: "Paytone One";
-   color: pink;
+   color: #D8B830;
    text-transform: uppercase;
    letter-spacing: -2px;
  }
@@ -135,7 +135,7 @@ h2 {
    font-size: 40px;
    cursor: pointer;
    position: relative;
-   border: 2px solid white;
+   border: 2px solid rgb(255, 255, 255);
    outline: none;
    color: white;
    background-color: transparent;
@@ -143,8 +143,8 @@ h2 {
    font-family: 'Merriweather', serif;
    white-space: nowrap;
 
-   color: rgb(8, 8, 8);
-text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+   
+/* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080; */
 text-align: center;
 align-items: center;
  }
@@ -153,12 +153,13 @@ align-items: center;
    position: absolute;
    background-color: white;
    transition: 0.5s ease;
+   border:  rgb(7, 7, 7);
    
  }
  .btn--future::after, .btn--future::before {
    content: "";
    position: absolute;
-   border: 2px solid white;
+   border: 2px solid rgb(255, 255, 255);
    width: calc(100% + 15px);
    height: 60px;
    transition: 0.5s ease;
@@ -178,7 +179,7 @@ align-items: center;
  .btn--future:hover:after, .btn--future:hover:before {
    width: calc(100% - 30px);
    height: 80px;
-   color: white;
+   color: rgb(255, 255, 255);
    
  }
 /* login */
@@ -187,77 +188,30 @@ align-items: center;
    background-color: rgba(214, 143, 155, 0.425);
 }
 
-/* squares */
-.bubbles {
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
-  transform: translateZ(0);
-
-}
-.bubbles li {
-  position: absolute;
-  list-style: none;
-  display: block;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdpDw8xSRE863y8FwQ1RuwCtFdFRHgGFzYsNnJzSrW3xtk7Kdy);
-  bottom: -100px;
-  animation: square 20s infinite;
-  transition-timing-function: linear;
-}
-.bubbles li:nth-child(1) {
-  width: 40px;
-  height: 40px;
-  left: 20%;
-}
-.bubbles li:nth-child(2) {
-  width: 60px;
-  height: 60px;
-  left: 40%;
-  animation-delay: 2s;
-  animation-duration: 17s;
-}
-.bubbles li:nth-child(3) {
-  width: 10px;
-  height: 10px;
-  left: 68%;
-  animation-delay: 4s;
-  animation-duration: 12s;
-}
-.bubbles li:nth-child(4) {
-  width: 80px;
-  height: 80px;
-  left: 88%;
-  animation-delay: 1s;
-  animation-duration: 21s;
-}
-.bubbles li:nth-child(5) {
-  width: 50px;
-  height: 50px;
-  left: 38%;
-  animation-delay: 8s;
-  animation-duration: 11s;
-}
-.bubbles li:nth-child(6) {
-  width: 5px;
-  height: 5px;
-  left: 18%;
-  animation-delay: 8s;
-  animation-duration: 21s;
-}
-@keyframes square {
-  /* to start animation */
-  0%{
-      -webkit-transform: translateY(0);
-  }
-  100%{
-      -webkit-transform: translateY(800px) 
-
-      /* rotation */
-      rotate(630deg);
-  }
-}
 
 
-/* 1 */
+
+/* 
+on scroll remove navbar background 
+make link fixed to top of window
+rome particles 
+remove glow
+serif -heading
+sans serif -body
+
+
+
+Add a footer
+
+
+
+*/
+
+/* navbar
+flexbox across the page
+
+
+
+
+
+*/

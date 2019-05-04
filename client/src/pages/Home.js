@@ -15,7 +15,7 @@ class Home extends Component {
               <span>Modern </span> <span>Design</span>
               {/* {" ggf"} */}
             </h2>
-            <h2 className='happy'> {" home is a happy place"}
+            <h2 className='happy'> {" an interior design lookbook"}
             
             <br/>
             
@@ -27,29 +27,22 @@ class Home extends Component {
           <div id="box2">
          
             <h1 className='master'>
-            <ul class='bubbles'>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+           
             Masterpieces
             <br />
-            <h2 className='happy'> {" discover the finest home decor"} </h2>
+            <h2 className='happy'> {"  a place for interior design perpective"} </h2>
             
               <button class='button btn btn--future'>Discover More</button>
             </h1>
            
           </div>
 
-        <div id="box6">
+        {/* <div id="box6">
             <h2>
               h
             </h2>
            
-          </div>
+          </div> */}
 
           <div id="box3">
           

@@ -21,17 +21,20 @@ import Luxury from "./pages/Luxury";
 import Antique from "./pages/Antique";
 import Container from "./components/Container";
 import "./components/Container.css";
-import Navbar from "./components/Navbar";
+import NavbarMain from "./components/Navbar-main/Navbar-main";
+import NavbarUser from "./components/Navbar-user/Navbar-user";
 import Footer from "./components/Footer";
+
 
 
 class App extends Component {
 
   render() {
     const App = () => (
-        <div>
+      
           <Container>
-          <Navbar />
+          <NavbarUser />
+          <NavbarMain />
                 <Switch>
                   <Route exact path='/' component={Home}/>
                   <Route exact path="/modern" component={Modern} />
@@ -51,7 +54,7 @@ class App extends Component {
                 </Switch>
               <Footer />
           </Container>
-        </div>
+      
     )
     return (
 
