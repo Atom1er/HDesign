@@ -1,11 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar-user.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
-const NavbarUser = props => (
+library.add(faSignInAlt)
 
 
+// const NavbarUser = props => (
+class NavbarUser extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: true
+        
+        };
+      }
+  
+      render(){
 
+        let isLoggedIn = this.state.loggedIn;
+        let icon;
+
+        if (isLoggedIn) { 
+            
+        }
+        else{
+            icon= <FontAwesomeIcon icon={faSignInAlt} />
+        }
+
+          return(
 <nav className='nav-user'>
 <span>MD</span>
  
@@ -26,7 +51,7 @@ const NavbarUser = props => (
       to="./modern"
       className='nav-link' >
      
-      <i className='far fa-user-circle'></i>
+     {icon}
     </Link>
   </li> 
 
@@ -34,9 +59,20 @@ const NavbarUser = props => (
  
 
 </nav>
+          )
+      }
+
+          
+     
+
+}
+
+
 
    
- 
-);
+
 
 export default NavbarUser;
+
+
+
