@@ -77,3 +77,16 @@
     max-width: 100%;
   }
 }
+
+.pink {
+  color: white;
+  opacity: .4;
+  float: right;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.pink:hover {
+  color: pink;
+  opacity: 1;
+}

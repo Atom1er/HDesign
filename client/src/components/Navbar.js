@@ -2,44 +2,81 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = props => (
-  <div className=" container-fullwidth ">
+  <nav className="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
 
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-
-      <Link to="./" style={{ textDecoration: "none", color: "white" }}>
-        <h3 className="navbar-brand" href="a"><i className="fas fa-home"></i></h3>
+      <Link to="./"
+            className="navbar-brand mr-0 mr-md-2"
+            aria-label="Bootstrap" 
+            style={{ textDecoration: "none", color: "black" }}>
+        <i className="fa" 
+            // style={{ fontSize: "30px", color: "black" }}
+            >
+            &#xf015;
+            </i>
       </Link>
 
-      {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button> */}
-      {/* <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav"> */}
 
-          <Link to="./modern" style={{ textDecoration: "none", color: "white" }}>
-            <p className="nav-item nav-link">Modern</p>
-          </Link>
-          <Link to="./luxury" style={{ textDecoration: "none", color: "white" }} >
-            <p className="nav-item nav-link">Luxury</p>
-          </Link>
-          <Link to="./decor" style={{ textDecoration: "none", color: "white" }} >
-            <p className="nav-item nav-link">Decor</p>
-          </Link>
-          <Link to="./antique" style={{ textDecoration: "none", color: "white" }}>
-            <p className="nav-item nav-link">Antique</p>
-          </Link>
+      {/* <div className="navbar-nav-scroll"> */}
+        <ul className="navbar-nav bd-navbar-nav flex-row">
 
-          {/* <div>
-            <i className="far fa-heart"></i>
+          <li className="nav-item">
+            <Link to="./modern"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              <p>Modern</p>
+            </Link>
+          </li>
 
-            <i className="far fa-user"></i>
-          </div>
-        </div>
-      </div> */}
+          <li className="nav-item">
+            <Link to="./luxury"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }} >
+              Luxury
+            </Link>
+          </li>
 
-    </nav>
+          <li className="nav-item">
+            <Link to="./decor"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }} >
+              Decor
+            </Link>
+          </li>
 
-  </div>
+          <li className="nav-item">
+            <Link to="./antique"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              Antique
+            </Link>
+          </li>
+
+        </ul>
+
+        <ul className="navbar-nav flex-row ml-md-auto d-md-flex">
+
+          <li className="nav-item">
+            <Link to="./login"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              <i className="far fa-user"></i> Log In
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to="./signup"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              Sign Up Now!
+            </Link>
+          </li>
+
+        </ul>
+
+      {/* </div> */}
+
+  </nav>
+
 );
 
 export default Navbar;

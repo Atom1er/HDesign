@@ -5,8 +5,8 @@ import './App.css';
 import Home from './pages/Home';
 
 
-// import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 
 import List from './components/List';
@@ -29,29 +29,31 @@ class App extends Component {
 
   render() {
     const App = () => (
-        <div>
-          <Container>
+      <div>
+        <Container>
           <Navbar />
-                <Switch>
-                  <Route exact path='/' component={Home}/>
-                  <Route exact path="/modern" component={Modern} />
-                  <Route exact path="/decor" component={Decor} />
-                  <Route exact path="/luxury" component={Luxury} />
-                  <Route exact path="/antique" component={Antique} />
-                  <Route exact path='/admin' component={Admin}/>
-                  <Route path='/list' component={List}/>
-                  <Route exact path='/login' component={LogIn}/>
-                  {/* <Route path='/signup' component={SignUp}/> */}
-                  <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
-                  {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
-                  <Route exact path="/usersDb" component={UsersDb}/>
-                  { window.location.origin === "http://localhost:3000" ? 
-                    <Route exact path="/auth/google" component={RedirectGoogleAuth} />
-                  : false }
-                </Switch>
-              {/* <Footer /> */}
-          </Container>
-        </div>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path="/modern" component={Modern} />
+            <Route exact path="/decor" component={Decor} />
+            <Route exact path="/luxury" component={Luxury} />
+            <Route exact path="/antique" component={Antique} />
+
+            // Admin || User LogIn
+            <Route exact path='/admin' component={Admin} />
+            <Route exact path='/login' component={LogIn} />
+            <Route path='/list' component={List} />
+            
+            <Route path='/signup' component={SignUp} />
+            <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader} />
+            <Route exact path="/usersDb" component={UsersDb} />
+            {window.location.origin === "http://localhost:3000" ?
+              <Route exact path="/auth/google" component={RedirectGoogleAuth} />
+              : false}
+          </Switch>
+          {/* <Footer /> */}
+        </Container>
+      </div>
     )
     return (
 
