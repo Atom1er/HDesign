@@ -1,33 +1,19 @@
 .photos {
     height: 200px;
     width: 300px;
-    /* border: 1px solid black; */
     padding: 10px;
 }
 
-.hide {
-    /* visibility: hidden; */
-    /* display: none; */
-}
-
 .pink {
-    /* visibility: hidden; */
-    /* font-size: 40px;
-    height: 5em;
-    display: flex;
-    align-items: center;
-    justify-content: center  */
     float: right;
     font-size: 30px;
     padding-top: 10px;
+    color: white;
+    opacity: .4;
 }
 
 .pink:hover {
-    color: pink;
-    /* visibility: visible; */
-}
+    color: #FF69B4;
+    opacity: 1;
 
-/* .hide:hover {
-    display: block;
-    visibility: visible;
-} */
+}
