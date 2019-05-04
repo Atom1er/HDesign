@@ -36,6 +36,8 @@ class Modern extends Component {
             });
     }
 
+    // 
+
     render() {
 
         const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
@@ -79,6 +81,31 @@ class Modern extends Component {
                 </div>
                 <br />
             </div>
+
+
+
+// <div className="modern-container">
+// <br />
+// <div className="row">
+//     <div className="column" />
+//     {photosUrl}
+//     <div className="column" />
+// </div>
+// <br />
+// <div className="jumbotron-fluid text-center">
+//     <h1>Modern</h1>
+//     <hr />
+//     <h3>World of modern</h3>
+// </div>
+// <br />
+// <div className="row">
+//     <div className="column" />
+//     {photosUrl2}
+//     <div className="column" />
+// </div>
+// <br />
+// </div>
+
 
         );
     }

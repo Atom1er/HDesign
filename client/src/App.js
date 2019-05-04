@@ -5,7 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 
 
-import SignUp from './components/SignUp';
+// import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 
@@ -41,7 +41,7 @@ class App extends Component {
                   <Route exact path='/admin' component={Admin}/>
                   <Route path='/list' component={List}/>
                   <Route exact path='/login' component={LogIn}/>
-                  <Route path='/signup' component={SignUp}/>
+                  {/* <Route path='/signup' component={SignUp}/> */}
                   <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
                   {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
                   <Route exact path="/usersDb" component={UsersDb}/>
