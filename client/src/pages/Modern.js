@@ -33,6 +33,7 @@ class Modern extends Component {
         // Send an AJAX POST-request//
         axios.post("/api/db/favItems", fav)
             .then(function (data) {
+                console.log("Added to favorites")
             });
     }
 
@@ -60,11 +61,11 @@ class Modern extends Component {
 
         return (
 
-            <div className="modern-container">
+            <div>
                 <br />
                 <div className="row">
                     <div className="col-1" />
-                    {photosUrl}
+                    <div className="image-container col-10">{photosUrl}</div>
                     <div className="col-1" />
                 </div>
                 <br />
@@ -76,7 +77,7 @@ class Modern extends Component {
                 <br />
                 <div className="row">
                     <div className="col-1" />
-                    {photosUrl2}
+                    <div className="image-container col-10">{photosUrl2}</div>
                     <div className="col-1" />
                 </div>
                 <br />

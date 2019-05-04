@@ -40,13 +40,17 @@ class App extends Component {
             <Route exact path="/antique" component={Antique} />
 
             // Admin || User LogIn
-            <Route exact path='/admin' component={Admin} />
             <Route exact path='/login' component={LogIn} />
+            <Route exact path='/admin' component={Admin} />
+            <Route exact path="/usersDb" component={UsersDb} />
+
+
+            
             <Route path='/list' component={List} />
             
             <Route path='/signup' component={SignUp} />
             <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader} />
-            <Route exact path="/usersDb" component={UsersDb} />
+            
             {window.location.origin === "http://localhost:3000" ?
               <Route exact path="/auth/google" component={RedirectGoogleAuth} />
               : false}

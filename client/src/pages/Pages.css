@@ -1,8 +1,9 @@
-/* modern  */
 
-.modern-container {
-  height: 750px;
-  background-color: rgb(252, 252, 252);
+.image-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  /* width: 1500px; */
+  /* border: 1px solid black; */
 }
 
 body {
