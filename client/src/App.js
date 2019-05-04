@@ -1,13 +1,18 @@
 // export default App;
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 
 
 import SignUp from './components/SignUp';
+import SUP from './components/sign-up';
 import LogIn from './components/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
+import LoginLocal from './components/login-local';
+import PersonalAccount from './components/personal-account';
+import Logout from './components/logout';
+import Users from './components/Users';
 
 import List from './components/List';
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
@@ -27,9 +32,19 @@ import Navbar from "./components/Navbar";
 
 class App extends Component {
 
+  state = {
+    user: {}
+  }
+
+  setUser = (user) => {
+    this.setState({
+      user: user
+    });
+  }
+
   render() {
-    const App = () => (
-        <div>
+    return (
+        <Router>
           <Container>
           <Navbar />
                 <Switch>
@@ -42,6 +57,18 @@ class App extends Component {
                   <Route path='/list' component={List}/>
                   <Route exact path='/login' component={LogIn}/>
                   <Route path='/signup' component={SignUp}/>
+                  <Route path='/sign-up' component={SUP}/>
+                  <Route exact path="/logout" component={Logout} />
+                  <Route exact path="/login-local" render={
+                    () => (
+                      <LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />
+                    )
+                  } />
+                  <Route exact path="/personal-account" render={
+                    () => (
+                      <PersonalAccount {...this.props} setUser={this.setUser} user={this.state.user} />
+                    )
+                  } />
                   <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
                   {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
                   <Route exact path="/usersDb" component={UsersDb}/>
@@ -51,12 +78,7 @@ class App extends Component {
                 </Switch>
               {/* <Footer /> */}
           </Container>
-        </div>
-    )
-    return (
-
-      <App />
-
+        </Router>
     );
   }
 }

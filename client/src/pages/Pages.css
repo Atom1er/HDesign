@@ -1,12 +1,22 @@
+
+
+/* modern  */
 .modern-container {
   height: 750px;
-  background-color: grey;
+  background-color: rgb(252, 252, 252);
 }
+
+
+
+
+
+
 body {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
+  background-color: #FFFFFF;
   
 }
 
@@ -50,6 +60,22 @@ body {
    background-size: cover;
    display: table;
    background-attachment: fixed;
+}
+/* #box5{
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://cdn.trendhunterstatic.com/thumbs/geometric-furniture-designs.jpeg);
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
+} */
+#box6{
+  height: 50vh;
+  width: 100%;
+  background-image: url(https://4.bp.blogspot.com/-GpvwI8L6Bgw/WvBJoWnk9MI/AAAAAAAGRqs/DWFaJdoaYBkNQhaELHd325h5f9gtQEx-ACLcBGAs/s1600/The%2BYose-gi%2BStool%2Bby%2Bdesigner%2BYoshiaki%2BIto%252C%2Ba%2Bpiece%2Binspired%2Bby%2Ba%2Btraditional%2BJapanese%2BShinto%2Bkumi-ki%2Bpuzzle-1.jpg);
+  background-size: cover;
+  display: table;
+  background-attachment: fixed;
 }
 h1{
    font-family: arial black;
@@ -115,12 +141,18 @@ h2 {
    margin: 40px;
    font-family: 'Merriweather', serif;
    white-space: nowrap;
+
+   color: rgb(8, 8, 8);
+text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+text-align: center;
+align-items: center;
  }
  .btn--border::after, .btn--border::before, .btn--border span::after, .btn--border span::before {
    content: "";
    position: absolute;
    background-color: white;
    transition: 0.5s ease;
+   
  }
  .btn--future::after, .btn--future::before {
    content: "";
@@ -145,9 +177,86 @@ h2 {
  .btn--future:hover:after, .btn--future:hover:before {
    width: calc(100% - 30px);
    height: 80px;
+   color: white;
+   
  }
 /* login */
 /* icons */
 .fa-home{
    background-color: rgba(214, 143, 155, 0.425);
 }
+
+/* squares */
+.bubbles {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  transform: translateZ(0);
+
+}
+.bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdpDw8xSRE863y8FwQ1RuwCtFdFRHgGFzYsNnJzSrW3xtk7Kdy);
+  bottom: -100px;
+  animation: square 20s infinite;
+  transition-timing-function: linear;
+}
+.bubbles li:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 20%;
+}
+.bubbles li:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 40%;
+  animation-delay: 2s;
+  animation-duration: 17s;
+}
+.bubbles li:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  left: 68%;
+  animation-delay: 4s;
+  animation-duration: 12s;
+}
+.bubbles li:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 88%;
+  animation-delay: 1s;
+  animation-duration: 21s;
+}
+.bubbles li:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  left: 38%;
+  animation-delay: 8s;
+  animation-duration: 11s;
+}
+.bubbles li:nth-child(6) {
+  width: 5px;
+  height: 5px;
+  left: 18%;
+  animation-delay: 8s;
+  animation-duration: 21s;
+}
+@keyframes square {
+  /* to start animation */
+  0%{
+      -webkit-transform: translateY(0);
+  }
+  100%{
+      -webkit-transform: translateY(800px) 
+
+      /* rotation */
+      rotate(630deg);
+  }
+}
+
+
+/* 1 */
