@@ -1,7 +1,55 @@
 import React, { Component } from 'react';
 import queryString from "query-string";
+import LOCALAPI from '../utils/local-auth';
+import { Link, Redirect } from 'react-router-dom';
 class SignUp extends Component {
   
+  state = {
+    email: "",
+    password: "",
+    errorMessage: null
+}
+
+handleInputChange = event => {
+    // copy
+    let name = event.target.name;
+    let value = event.target.value;
+    //modify
+
+    //setState
+    this.setState({
+        [name]: value
+    })
+}
+
+handleFormSubmit = event => {
+    event.preventDefault();
+    console.log(event.target);
+    LOCALAPI.loginUser({
+        user_email: this.state.email,
+        user_password: this.state.password
+    }).then( response => {
+        let user = response.data;
+        // make sure we have an email
+        if(user && user.email){
+            this.props.setUser(user);
+            this.setState({
+                errorMessage: null
+            });
+        }
+        else{
+            this.setState({
+                errorMessage: "Could not log in"
+            });
+        }
+    }).catch( error => {
+        this.setState({
+            errorMessage: "Could not log in"
+        });
+    })
+}
+
+
   componentWillMount() {
     var query = queryString.parse(this.props.location.search);
     if (query.token) {
@@ -11,35 +59,59 @@ class SignUp extends Component {
 }
 
   render() {
+    if(this.props.user && this.props.user.email){
+      return <Redirect to="/personal-account"/>;
+  }
     return (
       <div className="login" >
         {/* <h1>SignUp Page</h1> */}
 
-        <div className="container">
-    <div className="row">
-      <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div className="card card-signin my-5">
-          <div className="card-body">
-            <h5 className="card-title text-center">Sign In</h5>
-            <form className="form-signin">
-              <div className="form-label-group">
-                <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required autofocus />
-                <label for="inputEmail">Email address</label>
+        <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+              <label htmlFor="email">Email:</label>
+                        <input
+                        value={this.state.email}
+                        onChange={this.handleInputChange}
+                        name="email"
+                        type="text"
+                        className="form-control"
+                        placeholder="Type in Email"
+                        id="email"
+                        />
               </div>
 
-              <div className="form-label-group">
-                <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
-                <label for="inputPassword">Password</label>
+              <div class="form-label-group">
+              <label htmlFor="password">Password:</label>
+                        <input
+                        value={this.state.password}
+                        onChange={this.handleInputChange}
+                        name="password"
+                        type="password"
+                        className="form-control"
+                        placeholder="Type in Password"
+                        id="password"
+                        />
               </div>
 
-              <div className="custom-control custom-checkbox mb-3">
-                <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                <label className="custom-control-label" for="customCheck1">Remember password</label>
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
               </div>
+<<<<<<< HEAD:client/src/pages/SignUp.js
               <button class=" log btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+=======
+              <button class=" log btn btn-lg btn-primary btn-block text-uppercase" onClick={this.handleFormSubmit} type="submit">Sign in</button>
+>>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b:client/src/components/SignUp.js
               <hr class="my-4" />
               <button class="  btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
             </form>
+            {this.state.errorMessage}
           </div>
         </div>
       </div>
@@ -85,4 +157,3 @@ class SignUp extends Component {
   }
 }
 export default SignUp;
-

@@ -9,12 +9,14 @@ class Modern extends Component {
     state = {
         arrPhoto: [],
         showPhoto: 5,
-        showPhoto2: 10
+        showPhoto2: 10,
+        // email:""
     }
 
     // Fetch the list on first mount
     componentDidMount() {
         this.getPhotos();
+        // this.setState({email:this.props.user.email});
     }
 
     // Retrieves the list of items from the Express app
@@ -28,6 +30,7 @@ class Modern extends Component {
     handleClick = (url) => {
         const fav = {
             item_name: url,
+            // user_email: this.state.email
         };
 
         // Send an AJAX POST-request//

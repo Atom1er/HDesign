@@ -7,7 +7,7 @@ import App from './App';
 // import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 
 render((
-    <BrowserRouter>
+
         <App/>
-    </BrowserRouter>
+
 ), document.getElementById('root'));

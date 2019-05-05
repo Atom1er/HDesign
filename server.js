@@ -7,8 +7,15 @@ var Keys = require('./config/keys');
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(require('cookie-parser')());
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
-require("./config/passport");
+app.use(passport.session());
+
+
+require("./config/passport")(passport, db);
+
+
 var PORT = process.env.PORT || 5005;
 // Only for Deployment -HEROKU- Serve up static assets DO NOT TOUCHE !!!
 if (process.env.NODE_ENV === "production") {
@@ -16,10 +23,79 @@ if (process.env.NODE_ENV === "production") {
 }
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '/client/public')));
-// //Express Server Start
-// app.listen(PORT, function () {
-//     console.log('App listenning to port number : ' + PORT);
-// });
+
+// PASSPORT//////
+
+///Registration////
+app.post('/_api/user', (req, res) => {
+    //try to find user
+    db.users.findOne({
+        where: {
+            user_email: req.body.user_email
+        }
+    })
+    .then(function(user){
+        if(!user){
+            // if we don't have user, create
+            console.log("Will create user soon");
+            db.users.create(req.body)
+            .then( dbUser => {
+                console.log(dbUser);
+                res.json(dbUser);
+            })
+            .catch( error => {
+                console.log(error);
+                res.json({"message": "Error User Creation 1!"});
+            });
+        }
+        else{
+            // otherwise, we have the user
+            res.json({"message": "User already in DB"});
+        }
+        
+    })
+    .catch( error => {
+        console.log(error);
+        res.json({message: "Error User creation 2!"});
+    });
+    
+});
+
+//User Login
+app.post('/_api/user/login', 
+passport.authenticate('local'),
+function(req, res) {
+    // req.user comes from passport
+    if(req.user){
+        let temp = {};
+        temp.email = req.user.user_email;
+        temp.name = req.user.user_name;
+        res.json(temp);
+    }
+    else{
+        res.json(false);
+    }
+});
+
+app.get('/_api/user', (req, res) => {
+    // req.user comes from passport
+    if(req.user){
+        let temp = {};
+        temp.email = req.user.user_email;
+        temp.name = req.user.user_name;
+        res.json(temp);
+    }
+    else{
+        res.json(false);
+    }
+});
+
+app.get('/_api/user/logout', function(req, res){
+    req.logout();
+    res.json(true);
+});
+
+
 //////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
 // TO DO: cloudinary photo cloud service API 
 // Getting images with tag 'modern'//
@@ -104,6 +180,24 @@ app.post("/api/db/favItemsDelete", (req, res) => {
         console.log("succes");
     });
 });
+
+//TO DO: user site getting images based on user email//
+app.get("/api/db/favItems/users", (req, res) => {
+    console.log("Tessstttt "+Object.keys(req.user.dataValues));
+    if(req.user.dataValues.user_email){
+        db.favItems.findAll({
+            where: {
+                user_email: req.user.dataValues.user_email
+            }
+     
+        }).then((results) => {
+            res.json(results);
+            console.log(results);
+        });
+    }
+    
+ });
+
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + 'client/public/index.html'));
