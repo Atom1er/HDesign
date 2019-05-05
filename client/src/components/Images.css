@@ -78,15 +78,18 @@
   }
 }
 
-.pink {
-  color: white;
-  opacity: .4;
-  float: right;
-  font-size: 30px;
-  padding-top: 10px;
+.heart {
+  font-size: 50px;
+  opacity: 0;
+  position: relative;
+  bottom: -50px;
 }
 
-.pink:hover {
+.hover-me {
+  text-align: center;
+}
+
+.hover-me:hover .heart{
   color: pink;
   opacity: 1;
 }

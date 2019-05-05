@@ -3,15 +3,19 @@ import "./Images.css";
 
 function Images(props) {
     return (
+        <span className="hover-me">
+            <div className='image-box hover'
+                onClick={() => props.handleClick(props.url)}
+                style={{ backgroundImage: `url(${props.url})`, backgroundSize: "cover", height: "200px", width: "300px" }}>
+                <span
+                    className="heart"
+                >&#x2764;</span>
 
-        <div className='image-box' style={{ backgroundImage: `url(${props.url})`, backgroundSize: "cover", height: "200px", width: "300px" }}>
-            <span onClick={() => props.handleClick(props.url)}><i className="fas fa-heart pink"></i></span>
 
-
-            {/* <img src={props.url} className='photos' alt={props.url}></img> */}
-            {/* <button className='image-button' onClick={() => props.handleClick(props.url)}>Favorite</button> */}
-        </div>
-
+                {/* <img src={props.url} className='photos' alt={props.url}></img> */}
+                {/* <button className='image-button' onClick={() => props.handleClick(props.url)}>Favorite</button> */}
+            </div>
+        </span>
     )
 }
 
