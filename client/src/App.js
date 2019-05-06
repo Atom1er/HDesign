@@ -2,12 +2,11 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
 
 
-import SignUp from './components/SignUp';
+// import SignUp from './components/SignUp';
 import SUP from './components/sign-up';
-import LogIn from './components/LogIn';
+// import LogIn from './components/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 import LoginLocal from './components/login-local';
 import PersonalAccount from './components/personal-account';
@@ -18,15 +17,21 @@ import List from './components/List';
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 import UsersDb from './components/UsersDb';
 
-
-import Admin from './pages/Admin';
+import Home from './pages/Home';
 import Modern from "./pages/Modern";
 import Decor from "./pages/Decor";
 import Luxury from "./pages/Luxury";
 import Antique from "./pages/Antique";
 import Container from "./components/Container";
 import "./components/Container.css";
+
+import NavbarMain from "./components/Navbar-main/Navbar-main";
+// import NavbarUser from "./components/Navbar-user/Navbar-user";
+
 import Navbar from "./components/Navbar";
+import Admin from './pages/Admin';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 // import Footer from "./components/Footer";
 
 
@@ -51,12 +56,12 @@ class App extends Component {
   }
 
   render() {
-    
     return (
       <Router>
         
         <Container>
-          <Navbar />
+          {/* <NavbarUser /> */}
+          <NavbarMain />
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
             <Route exact path='/' component={Home} />
@@ -87,7 +92,6 @@ class App extends Component {
           {/* <Footer /> */}
         </Container>
       </Router>
-
     );
    
   }

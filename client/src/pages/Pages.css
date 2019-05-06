@@ -20,7 +20,6 @@ body {
   
 }
 
-
 /* .homey {
    height: 100%;
    margin: 0;
@@ -88,7 +87,9 @@ h1{
 }
 
 /* text */
+
 /* @import url('https://fonts.googleapis.com/css?family=Paytone+One'); */
+
 h2 {
    /* margin: 20px; */
    font-family: "Paytone One";
@@ -181,9 +182,110 @@ align-items: center;
    
  }
 /* login */
+
 /* icons */
-.fa-home{
-   background-color: rgba(214, 143, 155, 0.425);
+
+.fa-home {
+  background-color: rgba(214, 143, 155, 0.425);
+}
+
+/* squares */
+
+.bubbles {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  transform: translateZ(0);
+}
+
+.bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdpDw8xSRE863y8FwQ1RuwCtFdFRHgGFzYsNnJzSrW3xtk7Kdy);
+  bottom: -100px;
+  animation: square 20s infinite;
+  transition-timing-function: linear;
+}
+
+.bubbles li:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 20%;
+}
+
+.bubbles li:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 40%;
+  animation-delay: 2s;
+  animation-duration: 17s;
+}
+
+.bubbles li:nth-child(3) {
+  width: 10px;
+  height: 10px;
+  left: 68%;
+  animation-delay: 4s;
+  animation-duration: 12s;
+}
+
+.bubbles li:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 88%;
+  animation-delay: 1s;
+  animation-duration: 21s;
+}
+
+.bubbles li:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  left: 38%;
+  animation-delay: 8s;
+  animation-duration: 11s;
+}
+
+.bubbles li:nth-child(6) {
+  width: 5px;
+  height: 5px;
+  left: 18%;
+  animation-delay: 8s;
+  animation-duration: 21s;
+}
+
+@keyframes square {
+  /* to start animation */
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(800px)
+    /* rotation */
+    rotate(630deg);
+  }
+}
+
+.md {
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: #bdc3c7;
+  animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #6dd5ed;
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px #6dd5ed;
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 #2193b0;
+  }
 }
 
 /* squares */
