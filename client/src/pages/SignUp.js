@@ -103,11 +103,7 @@ handleFormSubmit = event => {
                 <input type="checkbox" class="custom-control-input" id="customCheck1" />
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
               </div>
-<<<<<<< HEAD:client/src/pages/SignUp.js
-              <button class=" log btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-=======
               <button class=" log btn btn-lg btn-primary btn-block text-uppercase" onClick={this.handleFormSubmit} type="submit">Sign in</button>
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b:client/src/components/SignUp.js
               <hr class="my-4" />
               <button class="  btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
             </form>

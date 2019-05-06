@@ -1,10 +1,10 @@
 import React, { Component, Redirect } from 'react';
-import AUTHAPI from '../utils/google-auth';
+// import AUTHAPI from '../utils/google-auth';
 import axios from 'axios';
 import Images from './Images1';
 import { Link } from 'react-router-dom';
 
-class PersonalAccount extends Component{
+class PersonalAccount extends Component {
 
     state = {
         item: [],
@@ -25,7 +25,7 @@ class PersonalAccount extends Component{
             .then(response => {
                 console.log(response.data);
                 let item = response.data;
-                this.setState({ item: item})
+                this.setState({ item: item })
             })
         // console.log(this.state.item.dataValues);
     }
@@ -46,17 +46,17 @@ class PersonalAccount extends Component{
         const favs = this.state.item;
         return (
             <div>
-                { this.props.user.email ? (
+                {this.props.user.email ? (
                     //  ${this.props.user.email}
                     <div>
-                        <h1>Welcome : {this.state.name}</h1>
+                        <h3>Welcome : {this.state.name}</h3>
                         {favs.map(favsUrl => (
                             <Images key={favsUrl.id}
                                 url={favsUrl.item_name}
                                 handleClickDelete={this.handleClickDelete} />
                         ))}
                     </div>
-                     ) : (<p>{`Please sign in at `} <Link to="/">Homepage</Link> </p>)}
+                ) : (<p>{`Please sign in at `} <Link to="/">Homepage</Link> </p>)}
             </div>
         );
     }

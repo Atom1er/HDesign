@@ -1,13 +1,4 @@
 
-<<<<<<< HEAD
-.image-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  /* width: 1500px; */
-  /* border: 1px solid black; */
-}
-
-=======
 
 /* modern  */
 .modern-container {
@@ -20,17 +11,13 @@
 
 
 
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
 body {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
   background-color: #FFFFFF;
-<<<<<<< HEAD
-=======
   
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
 }
 
 /* .homey {
@@ -41,44 +28,6 @@ body {
  
  } */
 
-<<<<<<< HEAD
-#box1 {
-  height: 100vh;
-  width: 100%;
-  background-image: url(https://images.unsplash.com/photo-1514466079202-94a24bf354ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1317&q=80);
-  background-size: cover;
-  display: table;
-  background-attachment: fixed;
-}
-
-#box2 {
-  height: 100vh;
-  width: 100%;
-  background-image: url(https://images.unsplash.com/photo-1494279844912-8aca7c106591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
-  background-size: cover;
-  display: table;
-  background-attachment: fixed;
-}
-
-#box3 {
-  height: 100vh;
-  width: 100%;
-  background-image: url(https://images.unsplash.com/photo-1543781656-5669752a3fc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
-  background-size: cover;
-  display: table;
-  background-attachment: fixed;
-}
-
-#box4 {
-  height: 100vh;
-  width: 100%;
-  background-image: url(https://images.pexels.com/photos/1423035/pexels-photo-1423035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  background-size: cover;
-  display: table;
-  background-attachment: fixed;
-}
-
-=======
 #box1{
    height: 100vh;
    width: 100%;
@@ -111,7 +60,6 @@ body {
    display: table;
    background-attachment: fixed;
 }
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
 /* #box5{
   height: 100vh;
   width: 100%;
@@ -120,12 +68,7 @@ body {
   display: table;
   background-attachment: fixed;
 } */
-<<<<<<< HEAD
-
-#box6 {
-=======
 #box6{
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
   height: 50vh;
   width: 100%;
   background-image: url(https://4.bp.blogspot.com/-GpvwI8L6Bgw/WvBJoWnk9MI/AAAAAAAGRqs/DWFaJdoaYBkNQhaELHd325h5f9gtQEx-ACLcBGAs/s1600/The%2BYose-gi%2BStool%2Bby%2Bdesigner%2BYoshiaki%2BIto%252C%2Ba%2Bpiece%2Binspired%2Bby%2Ba%2Btraditional%2BJapanese%2BShinto%2Bkumi-ki%2Bpuzzle-1.jpg);
@@ -133,17 +76,6 @@ body {
   display: table;
   background-attachment: fixed;
 }
-<<<<<<< HEAD
-
-h1 {
-  font-family: arial black;
-  font-size: 50px;
-  color: white;
-  margin: 0px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-=======
 h1{
    font-family: arial black;
    font-size: 50px;
@@ -152,7 +84,6 @@ h1{
    text-align: center;
    display: table-cell;
    vertical-align: middle;
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
 }
 
 /* text */
@@ -160,100 +91,6 @@ h1{
 /* @import url('https://fonts.googleapis.com/css?family=Paytone+One'); */
 
 h2 {
-<<<<<<< HEAD
-  /* margin: 20px; */
-  font-family: "Paytone One";
-  color: pink;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-}
-
-h2 span {
-  display: block;
-  text-align: center;
-  margin: 11px 0 17px 0;
-  font-size: 80px;
-  line-height: 80px;
-  color: #C0C0C0;
-  text-shadow: 0 13.36px 8.896px #a7a6a6, 0 -2px 1px rgb(122, 120, 120);
-  letter-spacing: -4px;
-}
-
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-.happy {
-  text-align: center;
-  /* font-family: 'Dancing Script', cursive; */
-  text-transform: lowercase;
-}
-
-.master {
-  text-align: center;
-  /* font-family: 'Dancing Script', cursive; */
-  text-transform: lowercase;
-  font-family: "Paytone One";
-  color: #C0C0C0;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-}
-
-/* button  */
-
-.btn {
-  text-align: center;
-  padding: 20px 30px;
-  font-size: 40px;
-  cursor: pointer;
-  position: relative;
-  border: 2px solid white;
-  outline: none;
-  color: white;
-  background-color: transparent;
-  margin: 40px;
-  font-family: 'Merriweather', serif;
-  white-space: nowrap;
-  color: rgb(8, 8, 8);
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
-  text-align: center;
-  align-items: center;
-}
-
-.btn--border::after, .btn--border::before, .btn--border span::after, .btn--border span::before {
-  content: "";
-  position: absolute;
-  background-color: white;
-  transition: 0.5s ease;
-}
-
-.btn--future::after, .btn--future::before {
-  content: "";
-  position: absolute;
-  border: 2px solid white;
-  width: calc(100% + 15px);
-  height: 60px;
-  transition: 0.5s ease;
-}
-
-.btn--future::after {
-  top: -15px;
-  left: -15px;
-  border-right: none;
-  border-bottom: none;
-}
-
-.btn--future::before {
-  bottom: -15px;
-  right: -15px;
-  border-left: none;
-  border-top: none;
-}
-
-.btn--future:hover:after, .btn--future:hover:before {
-  width: calc(100% - 30px);
-  height: 80px;
-  color: white;
-}
-
-=======
    /* margin: 20px; */
    font-family: "Paytone One";
    color: pink;
@@ -344,7 +181,6 @@ align-items: center;
    color: white;
    
  }
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
 /* login */
 
 /* icons */
@@ -451,59 +287,6 @@ align-items: center;
       -webkit-box-shadow: 0 0 0 0 #2193b0;
   }
 }
-<<<<<<< HEAD
-@keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0  #8E2DE2;
-    box-shadow: 0 0 0 0  #8E2DE2;
-  }
-  70% {
-      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-  }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-}
-
-.nav-hover {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.nav-hover:hover {
-  text-decoration: underline;
-  animation: nav-pulse 2s infinite;
-}
-
-@-webkit-keyframes nav-pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #6dd5ed;
-  }
-  70% {
-      -webkit-box-shadow: 0 0 0 10px #6dd5ed;
-  }
-  100% {
-      -webkit-box-shadow: 0 0 0 0 #2193b0;
-  }
-}
-@keyframes nav-pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0  #FF0099;
-    box-shadow: 0 0 0 0  #FF0099;
-  }
-  70% {
-      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-  }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-}
-
-=======
 
 /* squares */
 .bubbles {
@@ -578,5 +361,4 @@ align-items: center;
 }
 
 
->>>>>>> 60907d5fce50dc0eec84a909ffe2fc575588ca9b
 /* 1 */

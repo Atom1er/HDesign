@@ -8,6 +8,7 @@ class Users extends Component {
     state = {
         item: [],
         name: ''
+        
     }
     componentDidMount() {
         this.getUsers();
@@ -18,12 +19,13 @@ class Users extends Component {
             .then(response => {
                 let item = response.data;
                 this.setState({ item: item })
-                this.setState({ name: item[0].user_email })
+                // this.setState({ name: item[0].user_email })
             })
         // console.log(this.state.item.dataValues);
     }
     handleClickDelete = (url) => {
         const url2 = {
+            user_email:this.state.name,
             item_name: url,
         };
         // Send an AJAX POST-request//
