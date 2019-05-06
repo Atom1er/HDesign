@@ -13,7 +13,7 @@ import PersonalAccount from './components/personal-account';
 import Logout from './components/logout';
 import Users from './components/Users';
 
-import List from './components/List';
+// import List from './components/List';
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 import UsersDb from './components/UsersDb';
 
@@ -26,7 +26,7 @@ import Container from "./components/Container";
 import "./components/Container.css";
 
 import NavbarMain from "./components/Navbar-main/Navbar-main";
-// import NavbarUser from "./components/Navbar-user/Navbar-user";
+import NavbarUser from "./components/Navbar-user/Navbar-user";
 
 import Navbar from "./components/Navbar";
 import Admin from './pages/Admin';
@@ -60,18 +60,18 @@ class App extends Component {
       <Router>
         
         <Container>
-          {/* <NavbarUser /> */}
-          <NavbarMain />
+          <NavbarUser/>
+          <NavbarMain/>
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
             <Route exact path='/' component={Home} />
             {/* <Route exact path='/modern' render={()=>(<Modern {...this.props}/>)}  component={Modern} /> */}
             <Route exact path="/modern" render={() => (<Modern {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
-            <Route exact path="/decor" component={Decor}/>
-            <Route exact path="/luxury" component={Luxury} />
-            <Route exact path="/antique" component={Antique} />
+            <Route exact path="/decor" render={() => (<Decor {...this.props} setUser={this.setUser} user={this.state.user} />)} />
+            <Route exact path="/luxury" render={() => (<Luxury {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/antique" render={() => (<Antique {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path='/admin' component={Admin} />
-            <Route path='/list' component={List} />
+            {/* <Route path='/list' component={List} /> */}
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/sign-up' component={SUP} />

@@ -58,7 +58,7 @@ class LoginLocal extends Component{
     // }
     render() {
         if(this.props.user && this.props.user.email){
-            return <Redirect to="/personal-account"/>;
+            return <Redirect to="/"/>;
         }
         return (
             <div>

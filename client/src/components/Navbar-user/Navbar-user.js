@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar-user.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faSignInAlt)
+// library.add(faSignInAlt)
 
 
 
@@ -22,13 +22,14 @@ class NavbarUser extends React.Component {
   render() {
 
     let isLoggedIn = this.state.loggedIn;
-    let icon;
+    // let icon;
 
     if (isLoggedIn) {
 
     }
     else {
-      icon = <FontAwesomeIcon icon={faSignInAlt} />
+      // icon = <FontAwesomeIcon icon={faSignInAlt} />
+
     }
 
     return (
@@ -45,9 +46,8 @@ class NavbarUser extends React.Component {
 
 
         <ul>
-
           <li className="nav-item">
-            <Link to="./login"
+            <Link to="/login-local"
               className="nav-link"
               style={{ textDecoration: "none", color: "black" }}>
               <p className="nav-hover"><i className="far fa-user"></i> Log In</p>
@@ -59,6 +59,14 @@ class NavbarUser extends React.Component {
               className="nav-link"
               style={{ textDecoration: "none", color: "black" }}>
               <p className="nav-hover">Sign Up</p>
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to="/personal-account"
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              <p className="nav-hover">User Favorites</p>
             </Link>
           </li>
 
