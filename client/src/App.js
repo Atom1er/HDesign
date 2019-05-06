@@ -4,9 +4,6 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
 
-// import SignUp from './components/SignUp';
-import SUP from './components/sign-up';
-// import LogIn from './components/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 import LoginLocal from './components/login-local';
 import PersonalAccount from './components/personal-account';
@@ -26,7 +23,7 @@ import Container from "./components/Container";
 import "./components/Container.css";
 
 import NavbarMain from "./components/Navbar-main/Navbar-main";
-// import NavbarUser from "./components/Navbar-user/Navbar-user";
+import NavbarUser from "./components/Navbar-user/Navbar-user";
 
 import Navbar from "./components/Navbar";
 import Admin from './pages/Admin';
@@ -60,7 +57,7 @@ class App extends Component {
       <Router>
         
         <Container>
-          {/* <NavbarUser /> */}
+          <NavbarUser />
           <NavbarMain />
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
@@ -74,7 +71,6 @@ class App extends Component {
             <Route path='/list' component={List} />
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
-            <Route path='/sign-up' component={SUP} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/login-local" render={() => (<LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path="/personal-account" render={
