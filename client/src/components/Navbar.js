@@ -15,8 +15,8 @@ const Navbar = props => (
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-
-          <Link to="./modern" style={{ textDecoration: "none", color: "white" }}>
+          <Link to='./modern'
+            style={{ textDecoration: "none", color: "white" }}>
             <p className="nav-item nav-link">Modern</p>
           </Link>
           <Link to="./luxury" style={{ textDecoration: "none", color: "white" }} >

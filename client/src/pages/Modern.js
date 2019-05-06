@@ -10,14 +10,17 @@ class Modern extends Component {
         arrPhoto: [],
         showPhoto: 5,
         showPhoto2: 10,
-        // email:""
+        name: this.props.user.email
     }
 
     // Fetch the list on first mount
     componentDidMount() {
+        // const { modern } = this.props.match.params;
         this.getPhotos();
-        // this.setState({email:this.props.user.email});
+        // this.setState({email: this.props.user.email});
     }
+
+    
 
     // Retrieves the list of items from the Express app
     getPhotos = () => {
@@ -29,7 +32,8 @@ class Modern extends Component {
 
     handleClick = (url) => {
         const fav = {
-            item_name: url,
+            user_email: this.state.name,
+            item_name: url
             // user_email: this.state.email
         };
 

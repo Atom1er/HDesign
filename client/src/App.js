@@ -31,10 +31,18 @@ import Navbar from "./components/Navbar";
 
 
 class App extends Component {
-
-  state = {
-    user: {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    }
   }
+  
+    
+  
+  // state = {
+  //   user: {}
+  // }
 
   setUser = (user) => {
     this.setState({
@@ -43,44 +51,47 @@ class App extends Component {
   }
 
   render() {
+    
     return (
-        <Router>
-          <Container>
+      <Router>
+        
+        <Container>
           <Navbar />
-                <Switch>
-                  <Route exact path='/' component={Home}/>
-                  <Route exact path="/modern" component={Modern} />
-                  <Route exact path="/decor" component={Decor} />
-                  <Route exact path="/luxury" component={Luxury} />
-                  <Route exact path="/antique" component={Antique} />
-                  <Route exact path='/admin' component={Admin}/>
-                  <Route path='/list' component={List}/>
-                  <Route exact path='/login' component={LogIn}/>
-                  <Route path='/signup' component={SignUp}/>
-                  <Route path='/sign-up' component={SUP}/>
-                  <Route exact path="/logout" component={Logout} />
-                  <Route exact path="/login-local" render={
-                    () => (
-                      <LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />
-                    )
-                  } />
-                  <Route exact path="/personal-account" render={
-                    () => (
-                      <PersonalAccount {...this.props} setUser={this.setUser} user={this.state.user} />
-                    )
-                  } />
-                  <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader}/>
-                  {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
-                  <Route exact path="/usersDb" component={UsersDb}/>
-                  { window.location.origin === "http://localhost:3000" ? 
-                    <Route exact path="/auth/google" component={RedirectGoogleAuth} />
-                  : false }
-                </Switch>
-              {/* <Footer /> */}
-          </Container>
-        </Router>
+          <Switch>
+            {/* <Route exact path= '/Users' component={Users}/> */}
+            <Route exact path='/' component={Home} />
+            {/* <Route exact path='/modern' render={()=>(<Modern {...this.props}/>)}  component={Modern} /> */}
+            <Route exact path="/modern" render={() => (<Modern {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/decor" component={Decor}/>
+            <Route exact path="/luxury" component={Luxury} />
+            <Route exact path="/antique" component={Antique} />
+            <Route exact path='/admin' component={Admin} />
+            <Route path='/list' component={List} />
+            <Route exact path='/login' component={LogIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/sign-up' component={SUP} />
+            <Route exact path="/logout" component={Logout} />
+            <Route exact path="/login-local" render={() => (<LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/personal-account" render={
+              () => (
+                <PersonalAccount {...this.props} setUser={this.setUser} user={this.state.user} />
+              )
+            } />
+            <Route exact path="/photoWidgetUploader" component={PhotoWidgetUploader} />
+            {/* <Route exact path="/apiPhotos" component={ApiPhotos}/> */}
+            <Route exact path="/usersDb" component={UsersDb} />
+            {window.location.origin === "http://localhost:3000" ?
+              <Route exact path="/auth/google" component={RedirectGoogleAuth} />
+              : false}
+          </Switch>
+          {/* <Footer /> */}
+        </Container>
+      </Router>
+
     );
+   
   }
+
 }
 
 export default App;
