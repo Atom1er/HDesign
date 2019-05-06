@@ -1,0 +1,20 @@
+.nav-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px;
+    border-top: 7px solid black;
+    position: fixed;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    background: #ffffff;
+}
+
+.nav-user ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    list-style-type: none;
+}

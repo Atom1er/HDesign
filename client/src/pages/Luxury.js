@@ -59,21 +59,25 @@ class Luxury extends Component {
         return (
 
             <div>
+                <br />
                 <div className="row">
                     <div className="col-1" />
-                    {photosUrl}
+                    <div className="image-container col-10">{photosUrl}</div>
                     <div className="col-1" />
                 </div>
-                <div className="jumbotron text-center">
-                    <h1>Luxury</h1>
+                <br />
+                <div className="jumbotron-fluid text-center">
+                    <h1>Modern</h1>
                     <hr />
-                    <h3>World of Luxury</h3>
+                    <h3>World of modern</h3>
                 </div>
+                <br />
                 <div className="row">
                     <div className="col-1" />
-                    {photosUrl2}
+                    <div className="image-container col-10">{photosUrl2}</div>
                     <div className="col-1" />
                 </div>
+                <br />
             </div>
 
         );

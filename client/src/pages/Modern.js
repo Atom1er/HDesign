@@ -36,8 +36,12 @@ class Modern extends Component {
         // Send an AJAX POST-request//
         axios.post("/api/db/favItems", fav)
             .then(function (data) {
+                console.log("Added to favorites")
+                alert("Added to favorites");
             });
     }
+
+    // 
 
     render() {
 
@@ -61,11 +65,11 @@ class Modern extends Component {
 
         return (
 
-            <div className="modern-container">
+            <div>
                 <br />
                 <div className="row">
                     <div className="col-1" />
-                    {photosUrl}
+                    <div className="image-container col-10">{photosUrl}</div>
                     <div className="col-1" />
                 </div>
                 <br />
@@ -77,11 +81,36 @@ class Modern extends Component {
                 <br />
                 <div className="row">
                     <div className="col-1" />
-                    {photosUrl2}
+                    <div className="image-container col-10">{photosUrl2}</div>
                     <div className="col-1" />
                 </div>
                 <br />
             </div>
+
+
+
+// <div className="modern-container">
+// <br />
+// <div className="row">
+//     <div className="column" />
+//     {photosUrl}
+//     <div className="column" />
+// </div>
+// <br />
+// <div className="jumbotron-fluid text-center">
+//     <h1>Modern</h1>
+//     <hr />
+//     <h3>World of modern</h3>
+// </div>
+// <br />
+// <div className="row">
+//     <div className="column" />
+//     {photosUrl2}
+//     <div className="column" />
+// </div>
+// <br />
+// </div>
+
 
         );
     }
