@@ -39,7 +39,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {}
+      user: {
+      }
     }
   }
   
@@ -60,8 +61,8 @@ class App extends Component {
       <Router>
         
         <Container>
-          <NavbarUser/>
-          <NavbarMain/>
+          <NavbarUser user={this.state.user}/>
+          <NavbarMain />
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
             <Route exact path='/' component={Home} />

@@ -19,6 +19,12 @@ class NavbarUser extends React.Component {
     };
   }
 
+  update = (e) => {
+    console.log(e.target.value);
+    this.props.onUpdate(e.target.value);
+    this.setState({name: e.target.value});
+  };
+
   render() {
 
     let isLoggedIn = this.state.loggedIn;
@@ -33,7 +39,7 @@ class NavbarUser extends React.Component {
     }
 
     return (
-      <nav className='nav-user'>
+      <nav className='nav-user'> 
 
         <Link to="./"
           className="navbar-brand mr-0 mr-md-2"
@@ -41,9 +47,6 @@ class NavbarUser extends React.Component {
           style={{ textDecoration: "none", color: "black" }}>
           <span className="md">MD</span>
         </Link>
-
-
-
 
         <ul>
           <li className="nav-item">
@@ -68,6 +71,14 @@ class NavbarUser extends React.Component {
               style={{ textDecoration: "none", color: "black" }}>
               <p className="nav-hover">User Favorites</p>
             </Link>
+          </li>
+
+          <li className="nav-item">
+            <div
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              <h4 className="nav-hover">{this.props.user.name}</h4>
+            </div>
           </li>
 
         </ul>
