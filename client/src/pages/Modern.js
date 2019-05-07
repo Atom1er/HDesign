@@ -45,7 +45,7 @@ class Modern extends Component {
 
     render() {
 
-        const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
+        const photosUrl = this.state.arrPhoto.map(
             (images) => <Images
                 key={images.public_id}
                 id={images.public_id}
@@ -54,63 +54,50 @@ class Modern extends Component {
             />
         )
 
-        const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
-            (images) => <Images
-                key={images.public_id}
-                id={images.public_id}
-                url={images.url}
-                handleClick={this.handleClick}
-            />
-        )
+        // const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
+        //     (images) => <Images
+        //         key={images.public_id}
+        //         id={images.public_id}
+        //         url={images.url}
+        //         handleClick={this.handleClick}
+        //     />
+        // )
+
+        // const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
+        //     (images) => <Images
+        //         key={images.public_id}
+        //         id={images.public_id}
+        //         url={images.url}
+        //         handleClick={this.handleClick}
+        //     />
+        // )
 
         return (
 
             <div>
                 <br />
-                <div className="row">
-                    <div className="col-1" />
-                    <div className="image-container col-10">{photosUrl}</div>
-                    <div className="col-1" />
-                </div>
-                <br />
                 <div className="jumbotron-fluid text-center">
-                    <h1>Modern</h1>
-                    <hr />
-                    <h3>World of modern</h3>
+                    <i style={{ fontSize: "50px" }}>Modern</i>
                 </div>
                 <br />
-                <div className="row">
-                    <div className="col-1" />
-                    <div className="image-container col-10">{photosUrl2}</div>
-                    <div className="col-1" />
-                </div>
                 <br />
+                {/* <div className="row"> */}
+                    {/* <div className="col-1" /> */}
+                    {/* <div className="image-container col-10">{photosUrl}</div> */}
+                    <div className="wrapper">{photosUrl}</div>
+                    {/* <div className="col-1" /> */}
+                {/* </div> */}
+                <br />
+
+                {/* <br /> */}
+                {/* <div className="row"> */}
+                    {/* <div className="col-1" /> */}
+                    {/* <div className="image-container col-10">{photosUrl2}</div> */}
+                    {/* {photosUrl2} */}
+                    {/* <div className="col-1" /> */}
+                {/* </div> */}
+                {/* <br /> */}
             </div>
-
-
-
-// <div className="modern-container">
-// <br />
-// <div className="row">
-//     <div className="column" />
-//     {photosUrl}
-//     <div className="column" />
-// </div>
-// <br />
-// <div className="jumbotron-fluid text-center">
-//     <h1>Modern</h1>
-//     <hr />
-//     <h3>World of modern</h3>
-// </div>
-// <br />
-// <div className="row">
-//     <div className="column" />
-//     {photosUrl2}
-//     <div className="column" />
-// </div>
-// <br />
-// </div>
-
 
         );
     }

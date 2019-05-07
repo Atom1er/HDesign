@@ -62,17 +62,7 @@ class Admin extends Component {
 
         const photosUrl = this.state.arrPhoto;
         return (
-            <div className="photo-container">
-                {photosUrl.map(images => (
-                    <Images 
-                        key={images.public_id}
-                        url={images.url}
-                        id={images.public_id}
-                        handleClick={this.handleClick}
-                        handleClickDelete={this.handleClickDelete}
-                        handleClickCloud={this.handleClickCloud}
-                    />))}
-
+            <div>
                 <Link
                     to='../photoWidgetUploader'
                     className={window.location.pathname === "/PhotoWidgetUploader" ? "nav-link active" : "nav-link"}>
@@ -81,6 +71,20 @@ class Admin extends Component {
                     </button>
                 </Link>
 
+                <div className="wrapper">
+
+
+                    {photosUrl.map(images => (
+                        <Images
+                            key={images.public_id}
+                            url={images.url}
+                            id={images.public_id}
+                            handleClick={this.handleClick}
+                            handleClickDelete={this.handleClickDelete}
+                            handleClickCloud={this.handleClickCloud}
+                        />))}
+
+                </div>
             </div>
         );
     }
