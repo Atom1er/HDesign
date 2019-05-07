@@ -9,7 +9,8 @@ class Decor extends Component {
     state = {
         arrPhoto: [],
         showPhoto: 5,
-        showPhoto2: 10
+        showPhoto2: 10,
+        name: this.props.user.email
     }
 
     // Fetch the list on first mount
@@ -27,7 +28,8 @@ class Decor extends Component {
 
     handleClick = (url) => {
         const fav = {
-            item_name: url,
+            user_email: this.state.name,
+            item_name: url
         };
 
         // Send an AJAX POST-request//
