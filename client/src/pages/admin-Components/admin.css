@@ -1,0 +1,55 @@
+.container-admin{
+    margin: 0 auto;
+    /* border: solid black 1px; */
+    width: 80%;
+}
+
+.photo-container-admin{
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative; 
+    background-color: rgb(218, 218, 218);
+    padding: 20px;
+    
+}
+.back-btn-admin{
+    display: flex;
+}
+.btn-back{
+    margin-left: 8px;
+}
+
+.photos-admin{
+    width: 200px;
+    height: 100px;
+    /* margin: 4px; */
+}
+
+.image-buton-admin{
+    width: 100px;
+
+}
+
+.upload-button{
+    margin-bottom: 8px;
+    width: fit-content;
+    /* border: solid black 1px; */
+}
+.div-image-admin{
+    padding: 2px;
+    padding-bottom: none;
+    margin: 4px;
+    border: gray solid 1px;
+    border-bottom: none;
+}
+
+.btn-back{
+    text-align: end;
+}
+
+.btn-delete{
+    margin-top: 3px;
+}

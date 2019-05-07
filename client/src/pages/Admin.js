@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Images from './Images';
-// import './ApiPhotos.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import './admin-Components/admin.css';
 
 class Admin extends Component {
     // Initialize the state
@@ -24,16 +23,16 @@ class Admin extends Component {
     }
 
     //TO DO: to grab url from image and send it to db //
-    handleClick = (url) => {
-        const fav = {
-            item_name: url,
-        };
+    // handleClick = (url) => {
+    //     const fav = {
+    //         item_name: url,
+    //     };
 
-        // Send an AJAX POST-request//
-        axios.post("/api/db/favItems", fav)
-            .then(function (data) {
-            });
-    }
+    //     // Send an AJAX POST-request//
+    //     axios.post("/api/db/favItems", fav)
+    //         .then(function (data) {
+    //         });
+    // }
 
     handleClickDelete = (url) => {
         const url2 = {
@@ -59,30 +58,44 @@ class Admin extends Component {
 
     render() {
 
-
-        const photosUrl = this.state.arrPhoto;
         return (
-            <div className="photo-container">
-                {photosUrl.map(images => (
-                    <Images 
-                        key={images.public_id}
-                        url={images.url}
-                        id={images.public_id}
-                        handleClick={this.handleClick}
-                        handleClickDelete={this.handleClickDelete}
-                        handleClickCloud={this.handleClickCloud}
-                    />))}
+           <div>
+           <ul>
 
-                <Link
-                    to='../photoWidgetUploader'
-                    className={window.location.pathname === "/PhotoWidgetUploader" ? "nav-link active" : "nav-link"}>
-                    <button variant="raised">
-                        Photo upload
-                    </button>
-                </Link>
+                <li className="nav-item-2">
+                    <Link to="/modernadmin"
+                        className="nav-link-2"
+                        style={{ textDecoration: "none", color: "black" }}>
+                        <p className="nav-hover-2">Modern</p>
+                    </Link>
+                </li>
+                <li className="nav-item-2">
+                    <Link to="/luxuryadmin"
+                        className="nav-link-2"
+                        style={{ textDecoration: "none", color: "black" }}>
+                        <p className="nav-hover-2">Luxury</p>
+                    </Link>
+                </li>
+                <li className="nav-item-2">
+                    <Link to="/decoradmin"
+                        className="nav-link-2"
+                        style={{ textDecoration: "none", color: "black" }}>
+                        <p className="nav-hover-2">Decor</p>
+                    </Link>
+                </li>
+                <li className="nav-item-2">
+                    <Link to="/antiqueadmin"
+                        className="nav-link-2"
+                        style={{ textDecoration: "none", color: "black" }}>
+                        <p className="nav-hover-2">Antique</p>
+                    </Link>
+                </li>
 
+            </ul>
             </div>
-        );
+        )
+
+
     }
 
 }

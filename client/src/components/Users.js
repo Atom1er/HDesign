@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Images from './Images1';
+// import Images from './Images1';
 // import ImageGallery from 'react-image-gallery';
 import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 
@@ -36,12 +36,12 @@ class Users extends Component {
     render() {
         const favs = this.state.item;
         return (<div>
-            <h1>Welcome : {this.state.name}</h1>
+            {/* <h1>Welcome : {this.state.name}</h1>
             {favs.map(favsUrl => (
                 <Images key={favsUrl.id}
                     url={favsUrl.item_name}
                     handleClickDelete={this.handleClickDelete} />
-            ))}
+            ))} */}
         </div>)
         // return <ImageGallery items={test2} />
     }
