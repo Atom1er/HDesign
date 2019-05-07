@@ -19,7 +19,7 @@ class Home extends Component {
             
             <br/>
             
-
+            <button class='button btn btn--future'>Discover More</button>
             </h2>
            
           </div>
@@ -28,11 +28,11 @@ class Home extends Component {
          
             <h1 className='master'>
            
-            Masterpieces
+            Decor
             <br />
             <h2 className='happy'> {"  a place for interior design perpective"} </h2>
             
-              <button class='button btn btn--future'>Discover More</button>
+              <button class=' button btn btn--future'>Discover More</button>
             </h1>
            
           </div>
@@ -46,9 +46,9 @@ class Home extends Component {
 
           <div id="box3">
           
-          <h1 className='master'>Masterpieces <br/>
+          <h1 className='master'> Luxury Goods <br/>
           
-          <blockquote class="blockquote text-center">
+          <blockquote class="blockquote text-center" style={{color:'#D8B830'}}>
   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
@@ -69,11 +69,13 @@ class Home extends Component {
           
           <div id="box4">
           <h1 className='master'>
-          <h1 className='bon'> dd</h1>
-          Masterpieces
-              <br />
-              <button class='button btn btn--future'>Discover More</button>
-            </h1>
+           
+           Masterpiece
+           <br />
+           <h2 className='happy'> {"  erras of beauty"} </h2>
+           
+             <button class=' button btn btn--future'>Discover More</button>
+           </h1>
           </div>
         </div>
       </div>

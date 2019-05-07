@@ -1,7 +1,7 @@
 .nav-user{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    /* align-items: baseline; */
     padding: 20px;
     border-top: 7px solid black;
     position: fixed;
@@ -18,3 +18,14 @@
     margin-left: 0px;
     list-style-type: none;
 }
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    font-size: 50px;
+    text-align: center;
+    color: black;
+}
+

@@ -32,7 +32,8 @@ class NavbarUser extends React.Component {
 
           return(
 <nav className='nav-user'>
-<span>MD</span>
+<span > 1</span>
+<span className='nav-logo'>hdesign</span>
  
 
 

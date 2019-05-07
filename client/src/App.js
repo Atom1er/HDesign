@@ -5,8 +5,8 @@ import './App.css';
 import Home from './pages/Home';
 import Admin from './components/Admin';
 
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
+import SignUp from './components/LogsignIn/SignUp';
+import LogIn from './components/LogIn/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 
 import List from './components/List';
