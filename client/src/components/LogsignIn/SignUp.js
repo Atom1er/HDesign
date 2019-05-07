@@ -48,7 +48,7 @@ class SignUp extends Component {
   </div>
         
 {/************************************ Google SignIn *******************************/}
-        <a href="/auth/google" className="button">
+        {/* <a href="/auth/google" className="button">
           <div>
             <span className="svgIcon t-popup-svg">
               <svg
@@ -79,7 +79,7 @@ class SignUp extends Component {
             </span>
             <span className="button-label">Sign in with Google</span>
           </div>
-        </a>
+        </a> */}
 {/************************************ Google SignIn *******************************/}
       </div>
     );
