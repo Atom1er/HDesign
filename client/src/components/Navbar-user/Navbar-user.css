@@ -19,6 +19,8 @@
     list-style-type: none;
 }
 
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 .nav-logo{
     display: flex;
     justify-content: center;
@@ -27,5 +29,6 @@
     font-size: 50px;
     text-align: center;
     color: black;
+    font-family: 'Oswald', sans-serif;
 }
 
