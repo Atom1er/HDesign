@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '/client/public')));
 
-// PASSPORT//////
+//////////////////////////// PASSPORT ////////////////////////
 
 ///Registration////
 app.post('/_api/user', (req, res) => {
@@ -61,7 +61,7 @@ app.post('/_api/user', (req, res) => {
     
 });
 
-//User Login
+////User Login
 app.post('/_api/user/login', 
 passport.authenticate('local'),
 function(req, res) {
@@ -90,13 +90,15 @@ app.get('/_api/user', (req, res) => {
     }
 });
 
+/// User LogOut
 app.get('/_api/user/logout', function(req, res){
     req.logout();
     res.json(true);
 });
 
 
-//////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
+//////////////  -----  API ROUTES GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
+
 // TO DO: cloudinary photo cloud service API 
 // Getting images with tag 'modern'//
 app.get('/api/get_photos/modern', (req, res) => {
@@ -108,6 +110,7 @@ app.get('/api/get_photos/modern', (req, res) => {
         }
     );
 });
+
 // Getting images with tag 'luxury'//
 app.get('/api/get_photos/luxury', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
@@ -118,6 +121,7 @@ app.get('/api/get_photos/luxury', (req, res) => {
         }
     );
 });
+
 // Getting images with tag 'antique'//
 app.get('/api/get_photos/antique', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
@@ -128,6 +132,7 @@ app.get('/api/get_photos/antique', (req, res) => {
         }
     );
 });
+
 // Getting images with tag 'decor'//
 app.get('/api/get_photos/decor', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
@@ -138,6 +143,7 @@ app.get('/api/get_photos/decor', (req, res) => {
         }
     );
 });
+
 app.post('/api/cloud/public_id', (req, res) => {
     var public = req.body.publicId;
     console.log(public)
@@ -151,7 +157,8 @@ cloudinary.config({
     api_key: Keys.api_key,
     api_secret: Keys.api_secret
 }
-)
+);
+
 //TO DO: database routes//
 // Users database favorites//
 app.get("/api/db/favorites", (req, res) => {
@@ -160,6 +167,7 @@ app.get("/api/db/favorites", (req, res) => {
         console.log("succes");
     });
 });
+
 // to store favorites in database //
 app.post("/api/db/favItems", (req, res) => {
     db.favItems.create({
@@ -171,6 +179,7 @@ app.post("/api/db/favItems", (req, res) => {
         console.log("succes");
     });
 });
+
 // to delete favorite items in database //
 app.post("/api/db/favItemsDelete", (req, res) => {
     db.favItems.destroy({
@@ -193,8 +202,6 @@ app.post("/api/db/createUser", (req, res) => {
 });
 
 
-
-
 //TO DO: user site getting images based on user email//
 app.get("/api/db/favItems/users", (req, res) => {
     var favItemEmail = req.user.dataValues.user_email;
@@ -214,8 +221,9 @@ app.get("/api/db/favItems/users", (req, res) => {
     
  });
 
+
  var myEmail = [];
-console.log('thiesfdslkfsldkf' + myEmail);
+// console.log('thiesfdslkfsldkf' + myEmail);
 
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {

@@ -37,10 +37,12 @@ import Navbar from "./components/Navbar";
 import Admin from './pages/Admin';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
+import LocalAPI from './utils/local-auth';
 // import Footer from "./components/Footer";
 
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -49,11 +51,16 @@ class App extends Component {
     }
   }
   
+  componentDidMount = () => {
+    if(!this.state.user || !this.state.user.email){
+      LocalAPI.getUserData().then( user => {
+        if(user){
+          this.setState({user: user.data});
+        }
+      })
+    }
+  }
     
-  
-  // state = {
-  //   user: {}
-  // }
 
   setUser = (user) => {
     this.setState({

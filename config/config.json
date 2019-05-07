@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Pollito#2",
+    "password": "Elvir@93",
     "database": "users_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "Tom": {
     "username": "root",
-    "password": "Pollito#2",
+    "password": "Elvir@93",
     "database": "users_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
