@@ -41,6 +41,10 @@
     font-weight: bold;
     padding: 1rem;
     transition: all 0.2s;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    background: yellow;
   }
   
   .form-label-group {

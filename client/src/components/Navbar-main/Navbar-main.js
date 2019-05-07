@@ -10,7 +10,7 @@ import './navbar-main.css';
 
 
 const Navbar = props => (
-<nav className='nav-main'>
+<nav className='nav-main   '>
   <ul>
     <li>
       <Link  
