@@ -10,7 +10,7 @@ import PersonalAccount from './components/personal-account';
 import Logout from './components/logout';
 import Users from './components/Users';
 
-import List from './components/List';
+// import List from './components/List';
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 import UsersDb from './components/UsersDb';
 
@@ -36,7 +36,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {}
+      user: {
+      }
     }
   }
   
@@ -57,18 +58,18 @@ class App extends Component {
       <Router>
         
         <Container>
-          <NavbarUser />
+          <NavbarUser user={this.state.user}/>
           <NavbarMain />
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
             <Route exact path='/' component={Home} />
             {/* <Route exact path='/modern' render={()=>(<Modern {...this.props}/>)}  component={Modern} /> */}
             <Route exact path="/modern" render={() => (<Modern {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
-            <Route exact path="/decor" component={Decor}/>
-            <Route exact path="/luxury" component={Luxury} />
-            <Route exact path="/antique" component={Antique} />
+            <Route exact path="/decor" render={() => (<Decor {...this.props} setUser={this.setUser} user={this.state.user} />)} />
+            <Route exact path="/luxury" render={() => (<Luxury {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/antique" render={() => (<Antique {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path='/admin' component={Admin} />
-            <Route path='/list' component={List} />
+            {/* <Route path='/list' component={List} /> */}
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
             <Route exact path="/logout" component={Logout} />
