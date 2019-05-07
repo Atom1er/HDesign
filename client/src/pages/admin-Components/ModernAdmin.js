@@ -75,7 +75,6 @@ class ModernAdmin extends Component {
                         <button className="btn-outline-dark btn-sm btn-back">Back</button>
                     </Link> 
                     </div>
-                    <hr></hr>
                 </div>
                 <div className="photo-container-admin">
                     {photosUrl.map(images => (

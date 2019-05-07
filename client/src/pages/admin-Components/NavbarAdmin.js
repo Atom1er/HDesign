@@ -40,7 +40,7 @@ const NavbarAdmin = (props) => (
             </p>
             <hr/>
             <p className="nav-item-admin">
-                <Link to="#"
+                <Link to="/users"
                     className="nav-link-2"
                     style={{ textDecoration: "none", color: "black" }}>
                     <p className="nav-hover-2">Users</p>
