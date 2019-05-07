@@ -146,4 +146,4 @@ handleFormSubmit = event => {
     );
   }
 }
-export default SignUp;
+export default SignUp; 
