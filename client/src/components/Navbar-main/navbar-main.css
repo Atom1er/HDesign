@@ -15,3 +15,7 @@
     margin-left: 0px;
     list-style-type: none;
 }
+
+.nav-link1:hover{
+    transform: scale(1.2);
+}

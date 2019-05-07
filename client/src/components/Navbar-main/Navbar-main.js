@@ -9,7 +9,7 @@ const Navbar = props => (
       <li className="nav-item"
         style={{ borderLeft: "1px solid black" }}>
         <Link to="./modern"
-          className="nav-link"
+          className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }}>
           <span className="nav-hover">Modern</span>
             </Link>
@@ -18,7 +18,7 @@ const Navbar = props => (
       <li className="nav-item"
         style={{ borderLeft: "1px solid black" }}>
         <Link to="./luxury"
-          className="nav-link"
+          className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }} >
           <span className="nav-hover">Luxury</span>
             </Link>
@@ -27,7 +27,7 @@ const Navbar = props => (
       <li className="nav-item"
         style={{ borderLeft: "1px solid black" }}>
         <Link to="./decor"
-          className="nav-link"
+          className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }} >
           <span className="nav-hover">Decor</span>
             </Link>
@@ -36,7 +36,7 @@ const Navbar = props => (
       <li className="nav-item"
         style={{ borderLeft: "1px solid black", borderRight: "1px solid black" }}>
         <Link to="./antique"
-          className="nav-link"
+          className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }}>
           <span className="nav-hover">Antique</span>
         </Link>

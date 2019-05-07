@@ -69,15 +69,15 @@ class NavbarUser extends React.Component {
             <Link to="/personal-account"
               className="nav-link"
               style={{ textDecoration: "none", color: "black" }}>
-              <p className="nav-hover">User Favorites</p>
+              <p className="nav-hover">User Site</p>
             </Link>
           </li>
 
           <li className="nav-item">
             <div
-              className="nav-link"
+              className="user-name"
               style={{ textDecoration: "none", color: "black" }}>
-              <h4 className="nav-hover">{this.props.user.name}</h4>
+              <p><strong>{this.props.user.name}</strong></p>
             </div>
           </li>
 
