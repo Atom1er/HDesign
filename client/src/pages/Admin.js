@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 //Import components for admin site //
+import Users from "./admin-Components/Users";
 import ModernAdmin from "./admin-Components/ModernAdmin";
 import DecorAdmin from "./admin-Components/DecorAdmin";
 import LuxuryAdmin from "./admin-Components/LuxuryAdmin";
@@ -78,14 +79,13 @@ class Admin extends Component {
                         <Route exact path='/luxuryadmin' component={LuxuryAdmin} />
                         <Route exact path='/decoradmin' component={DecorAdmin} />
                         <Route exact path='/antiqueadmin' component={AntiqueAdmin} />
+                        <Route exact path='/users' component={Users} />
                     </Switch>
 
                 </div>
             </Router>
             </div>
         )
-
-
     }
 
 }

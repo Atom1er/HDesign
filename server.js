@@ -95,6 +95,7 @@ app.get('/_api/user/logout', function(req, res){
     res.json(true);
 });
 
+app.use(passport.session());
 
 //////////////  -----  API ROUTE GOES HERE (e.i: DATABASE REQUEST) -----   ////////////////////
 // TO DO: cloudinary photo cloud service API 
@@ -154,7 +155,7 @@ cloudinary.config({
 )
 //TO DO: database routes//
 // Users database favorites//
-app.get("/api/db/favorites", (req, res) => {
+app.get("/api/db/users", (req, res) => {
     db.users.findAll({}).then((results) => {
         res.json(results);
         console.log("succes");
