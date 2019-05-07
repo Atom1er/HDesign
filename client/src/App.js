@@ -4,9 +4,6 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
 
-// import SignUp from './components/SignUp';
-import SUP from './components/sign-up';
-// import LogIn from './components/LogIn';
 import RedirectGoogleAuth from './components/RedirectGoogleAuth';
 import LoginLocal from './components/login-local';
 import PersonalAccount from './components/personal-account';
@@ -85,7 +82,6 @@ class App extends Component {
             
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
-            <Route path='/sign-up' component={SUP} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/login-local" render={() => (<LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path="/personal-account" render={
