@@ -9,6 +9,7 @@
     height: 10vh;
     width: 100vw;
     background: #ffffff;
+    z-index: 100;
 }
 
 .nav-user ul{
