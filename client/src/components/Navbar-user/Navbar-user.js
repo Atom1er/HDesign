@@ -47,7 +47,7 @@ class NavbarUser extends React.Component {
         <ul>
 
           <li className="nav-item">
-            <Link to="./login"
+            <Link to="/login-local"
               className="nav-link"
               style={{ textDecoration: "none", color: "black" }}>
               <p className="nav-hover"><i className="far fa-user"></i> Log In</p>

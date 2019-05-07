@@ -163,6 +163,8 @@ app.get("/api/db/favorites", (req, res) => {
 // to store favorites in database //
 app.post("/api/db/favItems", (req, res) => {
     db.favItems.create({
+        // user_email: myEmail.slice(-1)[0],
+        user_email: req.body.user_email, 
         item_name: req.body.item_name
     }).then((results) => {
         res.json(results);
@@ -173,6 +175,7 @@ app.post("/api/db/favItems", (req, res) => {
 app.post("/api/db/favItemsDelete", (req, res) => {
     db.favItems.destroy({
         where: {
+            // user_email: myEmail[0],
             item_name: req.body.item_name
         }
     }).then((results) => {
@@ -181,9 +184,22 @@ app.post("/api/db/favItemsDelete", (req, res) => {
     });
 });
 
+// to delete favorite items in database //
+app.post("/api/db/createUser", (req, res) => {
+    db.users.create({}).then((results) => {
+        res.json(results);
+        console.log("succes");
+    });
+});
+
+
+
+
 //TO DO: user site getting images based on user email//
 app.get("/api/db/favItems/users", (req, res) => {
-    console.log("Tessstttt "+Object.keys(req.user.dataValues));
+    var favItemEmail = req.user.dataValues.user_email;
+    myEmail.push(favItemEmail);
+    //console.log("Tessstttt "+Object.keys(req.user.dataValues));
     if(req.user.dataValues.user_email){
         db.favItems.findAll({
             where: {
@@ -191,12 +207,15 @@ app.get("/api/db/favItems/users", (req, res) => {
             }
      
         }).then((results) => {
-            res.json(results);
-            console.log(results);
+            res.json(results); 
+            // console.log(results);
         });
     }
     
  });
+
+ var myEmail = [];
+console.log('thiesfdslkfsldkf' + myEmail);
 
 // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {

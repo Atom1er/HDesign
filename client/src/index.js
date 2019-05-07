@@ -6,8 +6,6 @@ import './index.css';
 import App from './App';
 // import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 
-render((
-
-        <App/>
+render(( <App/>
 
 ), document.getElementById('root'));

@@ -3,14 +3,14 @@ import queryString from "query-string";
 import LOCALAPI from '../utils/local-auth';
 import { Link, Redirect } from 'react-router-dom';
 class SignUp extends Component {
-
+  
   state = {
     email: "",
     password: "",
     errorMessage: null
-  }
+}
 
-  handleInputChange = event => {
+handleInputChange = event => {
     // copy
     let name = event.target.name;
     let value = event.target.value;
@@ -18,36 +18,36 @@ class SignUp extends Component {
 
     //setState
     this.setState({
-      [name]: value
+        [name]: value
     })
-  }
+}
 
-  handleFormSubmit = event => {
+handleFormSubmit = event => {
     event.preventDefault();
     console.log(event.target);
     LOCALAPI.loginUser({
-      user_email: this.state.email,
-      user_password: this.state.password
-    }).then(response => {
-      let user = response.data;
-      // make sure we have an email
-      if (user && user.email) {
-        this.props.setUser(user);
+        user_email: this.state.email,
+        user_password: this.state.password
+    }).then( response => {
+        let user = response.data;
+        // make sure we have an email
+        if(user && user.email){
+            this.props.setUser(user);
+            this.setState({
+                errorMessage: null
+            });
+        }
+        else{
+            this.setState({
+                errorMessage: "Could not log in"
+            });
+        }
+    }).catch( error => {
         this.setState({
-          errorMessage: null
+            errorMessage: "Could not log in"
         });
-      }
-      else {
-        this.setState({
-          errorMessage: "Could not log in"
-        });
-      }
-    }).catch(error => {
-      this.setState({
-        errorMessage: "Could not log in"
-      });
     })
-  }
+}
 
 
   componentWillMount() {
@@ -55,67 +55,60 @@ class SignUp extends Component {
     if (query.token) {
       window.localStorage.setItem("jwt", query.token);
       this.props.history.push("/");
-    }
   }
+}
 
   render() {
-    if (this.props.user && this.props.user.email) {
-      return <Redirect to="/personal-account" />;
-    }
+    if(this.props.user && this.props.user.email){
+      return <Redirect to="/personal-account"/>;
+  }
     return (
       <div className="login" >
         {/* <h1>SignUp Page</h1> */}
 
         <div class="container">
-          <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="card card-signin my-5">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Sign In</h5>
-                  <form class="form-signin">
-                    <div class="form-label-group">
-                      <label htmlFor="email">Email:</label>
-                      <input
-                        value={this.state.email}
-                        onChange={this.handleInputChange}
-                        name="email"
-                        type="text"
-                        className="form-control"
-                        placeholder="Type in Email"
-                        id="email"
-                      />
-                    </div>
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Log In</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+              <label htmlFor="email"></label>
+                <input value={this.state.email}
+                  onChange={this.handleInputChange} name="email"
+                  type="text" placeholder="Type in Email" id="email"
+                  />
+              </div>
 
-                    <div class="form-label-group">
-                      <label htmlFor="password">Password:</label>
-                      <input
+              <div class="form-label-group">
+              <label htmlFor="password">Password:</label>
+                        <input
                         value={this.state.password}
                         onChange={this.handleInputChange}
                         name="password"
                         type="password"
-                        className="form-control"
                         placeholder="Type in Password"
                         id="password"
-                      />
-                    </div>
-
-                    <div class="custom-control custom-checkbox mb-3">
-                      <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                      <label class="custom-control-label" for="customCheck1">Remember password</label>
-                    </div>
-                    <button class=" log btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                    <button class=" log btn btn-lg btn-primary btn-block text-uppercase" onClick={this.handleFormSubmit} type="submit">Sign in</button>
-                    <hr class="my-4" />
-                    <button class="  btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-                  </form>
-                  {this.state.errorMessage}
-                </div>
+                        />
               </div>
-            </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class=" log btn btn-lg btn-primary btn-block text-uppercase" onClick={this.handleFormSubmit} type="submit">Sign in</button>
+              <hr class="my-4" />
+              <button class="  btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+            </form>
+            {this.state.errorMessage}
           </div>
         </div>
-
-        {/************************************ Google SignIn *******************************/}
+      </div>
+    </div>
+  </div>
+        
+{/************************************ Google SignIn *******************************/}
         <a href="/auth/google" className="button">
           <div>
             <span className="svgIcon t-popup-svg">
@@ -148,9 +141,9 @@ class SignUp extends Component {
             <span className="button-label">Sign in with Google</span>
           </div>
         </a>
-        {/************************************ Google SignIn *******************************/}
+{/************************************ Google SignIn *******************************/}
       </div>
     );
   }
 }
-export default SignUp;
+export default SignUp; 
