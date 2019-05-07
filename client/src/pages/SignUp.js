@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import queryString from "query-string";
 import LOCALAPI from '../utils/local-auth';
 import { Link, Redirect } from 'react-router-dom';
+
 class SignUp extends Component {
   
   state = {
@@ -71,14 +72,19 @@ handleFormSubmit = event => {
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Log In</h5>
+            <h5 class="card-title text-center">Sign In</h5>
             <form class="form-signin">
               <div class="form-label-group">
-              <label htmlFor="email"></label>
-                <input value={this.state.email}
-                  onChange={this.handleInputChange} name="email"
-                  type="text" placeholder="Type in Email" id="email"
-                  />
+              <label htmlFor="email">Email:</label>
+                        <input
+                        value={this.state.email}
+                        onChange={this.handleInputChange}
+                        name="email"
+                        type="text"
+                        className="form-control"
+                        placeholder="Type in Email"
+                        id="email"
+                        />
               </div>
 
               <div class="form-label-group">
@@ -88,6 +94,7 @@ handleFormSubmit = event => {
                         onChange={this.handleInputChange}
                         name="password"
                         type="password"
+                        className="form-control"
                         placeholder="Type in Password"
                         id="password"
                         />

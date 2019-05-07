@@ -41,6 +41,7 @@ class LoginLocal extends Component{
                     errorMessage: "Could not log in"
                 });
             }
+            
         }).catch( error => {
             this.setState({
                 errorMessage: "Could not log in"
@@ -61,15 +62,10 @@ class LoginLocal extends Component{
             return <Redirect to="/"/>;
         }
         return (
-        <div class="container">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
-            <div class="card-body">
-            <h5 class="card-title text-center">Log In</h5>
-                <form className="form-signin">
-                    <div className="form-label-group">
-                        <div>Email:</div>
-                        <label htmlFor="email" />
+            <div>
+                <form className="search">
+                    <div className="form-group">
+                        <label htmlFor="email">Email:</label>
                         <input
                         value={this.state.email}
                         onChange={this.handleInputChange}
@@ -80,9 +76,8 @@ class LoginLocal extends Component{
                         id="email"
                         />
                     </div>
-                    <div className="form-label-group">
-                        <div>Password:</div>
-                        <label htmlFor="password" />
+                    <div className="form-group">
+                        <label htmlFor="password">Password:</label>
                         <input
                         value={this.state.password}
                         onChange={this.handleInputChange}
@@ -94,15 +89,12 @@ class LoginLocal extends Component{
                         />
                     </div>
                     
-                    <button type="submit" onClick={this.handleFormSubmit} className="btn btn-sm btn-primary text-uppercase">
-                        LogIn
+                    <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
+                        Search
                         </button>
                     </form>
                     {this.state.errorMessage}
             </div>
-            </div>
-            </div>
-        </div>
         );
     }
 }

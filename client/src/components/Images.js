@@ -4,9 +4,11 @@ import "./Images.css";
 function Images(props) {
     return (
         <span className="hover-me">
-            <div className='image-box hover'
+            <div 
+                // className='image-box hover col-12'
                 onClick={() => props.handleClick(props.url)}
-                style={{ backgroundImage: `url(${props.url})`, backgroundSize: "cover", height: "200px", width: "300px" }}>
+                onClick={props.openModalHandler}
+                style={{ backgroundImage: `url(${props.url})`, backgroundSize: "cover", height: "200px", width: "300px",borderRadius: "20px", margin: "10px"}}>
                 <span
                     className="heart"
                 >&#x2764;</span>
