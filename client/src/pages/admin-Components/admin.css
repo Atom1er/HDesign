@@ -1,16 +1,18 @@
 .container-admin{
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* border: solid black 1px; */
+    /* float: right; */
     width: 80%;
+    padding-left:10px; 
 }
 
 .photo-container-admin{
     border-radius: 4px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative; 
+    /* position: relative;  */
     background-color: rgb(218, 218, 218);
     padding: 20px;
     
@@ -52,4 +54,24 @@
 
 .btn-delete{
     margin-top: 3px;
+}
+.admin-body{
+    display: flex;
+}
+.nav-bar-admin{
+    margin-top: 182px;
+    width: 100px;
+    height: fit-content;
+    margin-left: 100px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: rgb(218, 218, 218); 
+}
+
+.nav-item-admin{
+    margin-top: 10px;
+}
+
+.nav-item-admin:hover{
+    text-decoration-line: underline;
 }

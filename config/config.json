@@ -8,7 +8,7 @@
   },
   "Tom": {
     "username": "root",
-    "password": "",
+    "password": "Pollito#2",
     "database": "users_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
