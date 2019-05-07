@@ -39,9 +39,9 @@ class App extends Component {
       user: {}
     }
   }
-  
-    
-  
+
+
+
   // state = {
   //   user: {}
   // }
@@ -55,7 +55,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        
+
         <Container>
           <NavbarUser />
           <NavbarMain />
@@ -63,8 +63,8 @@ class App extends Component {
             {/* <Route exact path= '/Users' component={Users}/> */}
             <Route exact path='/' component={Home} />
             {/* <Route exact path='/modern' render={()=>(<Modern {...this.props}/>)}  component={Modern} /> */}
-            <Route exact path="/modern" render={() => (<Modern {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
-            <Route exact path="/decor" component={Decor}/>
+            <Route exact path="/modern" render={() => (<Modern {...this.props} setUser={this.setUser} user={this.state.user} />)} />
+            <Route exact path="/decor" component={Decor} />
             <Route exact path="/luxury" component={Luxury} />
             <Route exact path="/antique" component={Antique} />
             <Route exact path='/admin' component={Admin} />
@@ -72,7 +72,7 @@ class App extends Component {
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
             <Route exact path="/logout" component={Logout} />
-            <Route exact path="/login-local" render={() => (<LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/login-local" render={() => (<LoginLocal {...this.props} setUser={this.setUser} user={this.state.user} />)} />
             <Route exact path="/personal-account" render={
               () => (
                 <PersonalAccount {...this.props} setUser={this.setUser} user={this.state.user} />
@@ -89,7 +89,7 @@ class App extends Component {
         </Container>
       </Router>
     );
-   
+
   }
 
 }

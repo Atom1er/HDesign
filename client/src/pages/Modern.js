@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Images from '../components/Images';
 import axios from "axios";
 import "./Pages.css";
-
+import Modal from '../components/Modal';
 
 class Modern extends Component {
     // Initialize the state
@@ -10,7 +10,8 @@ class Modern extends Component {
         arrPhoto: [],
         showPhoto: 5,
         showPhoto2: 10,
-        name: this.props.user.email
+        name: this.props.user.email,
+        isShowing: false
     }
 
     // Fetch the list on first mount
@@ -20,7 +21,17 @@ class Modern extends Component {
         // this.setState({email: this.props.user.email});
     }
 
-    
+    openModalHandler = () => {
+        this.setState({
+            isShowing: true
+        });
+    }
+
+    closeModalHandler = () => {
+        this.setState({
+            isShowing: false
+        });
+    }
 
     // Retrieves the list of items from the Express app
     getPhotos = () => {
@@ -55,6 +66,7 @@ class Modern extends Component {
                 id={images.public_id}
                 url={images.url}
                 handleClick={this.handleClick}
+                openModalHandler={this.openModalHandler}
             />
         )
 
@@ -78,13 +90,18 @@ class Modern extends Component {
 
         return (
 
-            <div>
-                <br />
+            <div className="overlay">
+                {/* <br /> */}
                 <div className="jumbotron-fluid text-center">
                     <i style={{ fontSize: "50px" }}>Modern</i>
                 </div>
-                <br />
-                <br />
+                {/* <br />
+                <br /> */}
+                <Modal
+                    // className="modal"
+                    show={this.state.isShowing}
+                    close={this.closeModalHandler}>
+                </Modal>
                 {/* <div className="row"> */}
                     {/* <div className="col-1" /> */}
                     {/* <div className="image-container col-10">{photosUrl}</div> */}
@@ -92,6 +109,11 @@ class Modern extends Component {
                     {/* <div className="col-1" /> */}
                 {/* </div> */}
                 <br />
+
+
+                
+
+
 
                 {/* <br /> */}
                 {/* <div className="row"> */}
