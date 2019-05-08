@@ -91,3 +91,9 @@
 .image-box {
   display: inline-block;
 }
+
+.personal-image {
+  width: 500px;
+  height: 400px;
+  background-size: cover;
+}

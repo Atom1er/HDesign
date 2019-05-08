@@ -1,10 +1,19 @@
 import React from 'react';
 
-function Images(props){
-   return <div className='div-image'>
-       <img src={props.url} className='photos' alt="pics"></img>
-       <button className="image-buton" onClick={()=> props.handleClickDelete(props.url)}>Hello</button>
-       </div>
+function Images(props) {
+    return <div className="wrapper">
+        <div
+            className="personal-image"
+            style={{ backgroundImage: `url(${props.url})`}}>
+
+            <button style={{float: "right"}}
+                    className="image-buton" 
+                    onClick={() => props.handleClickDelete(props.url)}>X</button>
+
+        </div>
+
+
+    </div>
 
 }
 
