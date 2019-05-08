@@ -97,3 +97,7 @@
 .image-box {
   display: inline-block;
 }
+
+.hover-me:hover{
+  transform: scale(1.5);
+}

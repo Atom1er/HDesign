@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar-user.css';
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
-
-// library.add(faSignInAlt)
+import Axios from "axios";
 
 
 
@@ -56,6 +52,13 @@ class NavbarUser extends React.Component {
               <p className="nav-hover"><i className="far fa-user"></i> Log In</p>
             </Link>
           </li>
+          <li className="nav-item">
+            <div
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              <p onClick={this.props.logOut}className="nav-hover"><i className="far fa-user"></i> Log Out</p>
+            </div>
+          </li>
 
           <li className="nav-item">
             <Link to="./signup"
@@ -65,13 +68,7 @@ class NavbarUser extends React.Component {
             </Link>
           </li>
 
-          <li className="nav-item">
-            <Link to="/personal-account"
-              className="nav-link"
-              style={{ textDecoration: "none", color: "black" }}>
-              <p className="nav-hover"><strong>{this.props.user.name}</strong></p>
-            </Link>
-          </li>
+          {(this.props.user.name ? (<li className="nav-item"><Link to="/personal-account"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
 
         </ul>
 

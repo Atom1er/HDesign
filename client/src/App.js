@@ -1,5 +1,5 @@
 // export default App;
-import React, { Component } from 'react';
+import React, { Component, Redirect } from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
@@ -12,11 +12,7 @@ import LoginLocal from './components/login-local';
 import PersonalAccount from './components/personal-account';
 import Logout from './components/logout';
 import Users from './components/Users';
-//Import components for admin site //
-import ModernAdmin from "./pages/admin-Components/ModernAdmin";
-import DecorAdmin from "./pages/admin-Components/DecorAdmin";
-import LuxuryAdmin from "./pages/admin-Components/LuxuryAdmin";
-import AntiqueAdmin from "./pages/admin-Components/AntiqueAdmin";
+
 
 // import List from './components/List';
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
@@ -60,7 +56,16 @@ class App extends Component {
       })
     }
   }
-    
+  
+
+  logOut=()=>{
+    LocalAPI.getLogout().then((res)=>{
+      this.setUser({});
+      return <Redirect to='/'/>
+      
+
+    })
+  }
 
   setUser = (user) => {
     this.setState({
@@ -73,7 +78,7 @@ class App extends Component {
       <Router>
         
         <Container>
-          <NavbarUser user={this.state.user}/>
+          <NavbarUser user={this.state.user} logOut={this.logOut}/>
           <NavbarMain />
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
@@ -85,10 +90,6 @@ class App extends Component {
             <Route exact path="/antique" render={() => (<Antique {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path='/admin' component={Admin} />
 
-            <Route exact path='/modernadmin' component={ModernAdmin} />
-            <Route exact path='/luxuryadmin' component={LuxuryAdmin} />
-            <Route exact path='/decoradmin' component={DecorAdmin} />
-            <Route exact path='/antiqueadmin' component={AntiqueAdmin} />
             
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
