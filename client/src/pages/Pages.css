@@ -97,6 +97,100 @@ h1 {
 /* @import url('https://fonts.googleapis.com/css?family=Paytone+One'); */
 
 h2 {
+<<<<<<< HEAD
+   /* margin: 20px; */
+   font-family: "Paytone One";
+   color: #D8B830;
+   text-transform: uppercase;
+   letter-spacing: -2px;
+ }
+ 
+ h2 span {
+   display: block;
+   text-align: center;
+   margin: 11px 0 17px 0;
+   font-size: 80px;
+   line-height: 80px;
+   color: #C0C0C0;
+   text-shadow: 0 13.36px 8.896px #a7a6a6,0 -2px 1px rgb(122, 120, 120);
+   letter-spacing: -4px;
+ }
+
+
+ @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+ .happy{
+    text-align: center;
+    /* font-family: 'Dancing Script', cursive; */
+    text-transform: lowercase;
+    
+ }
+ .master{
+   text-align: center;
+   /* font-family: 'Dancing Script', cursive; */
+   text-transform: lowercase;
+   font-family: "Paytone One";
+   color: #C0C0C0;
+   text-transform: uppercase;
+   letter-spacing: -2px;
+ }
+
+
+ /* button  */
+ .btn {
+    text-align: center;
+   padding: 20px 30px;
+   font-size: 40px;
+   cursor: pointer;
+   position: relative;
+   border: 2px solid rgb(255, 255, 255);
+   outline: none;
+   color: white;
+   background-color: transparent;
+   margin: 40px;
+   font-family: 'Merriweather', serif;
+   white-space: nowrap; 
+   
+
+   
+/* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;  */
+ text-align: center;
+align-items: center;
+ }
+ .btn--border::after, .btn--border::before, .btn--border span::after, .btn--border span::before {
+   content: "";
+   position: absolute;
+   background-color: white;
+   transition: 0.5s ease;
+   border:  rgb(7, 7, 7);
+   
+ }
+ .btn--future::after, .btn--future::before {
+   content: "";
+   position: absolute;
+   border: 2px solid rgb(255, 255, 255);
+   width: calc(100% + 15px);
+   height: 60px;
+   transition: 0.5s ease;
+ }
+ .btn--future::after {
+   top: -15px;
+   left: -15px;
+   border-right: none;
+   border-bottom: none;
+ }
+ .btn--future::before {
+   bottom: -15px;
+   right: -15px;
+   border-left: none;
+   border-top: none;
+ }
+ .btn--future:hover:after, .btn--future:hover:before {
+   width: calc(100% - 30px);
+   height: 80px;
+   color: rgb(255, 255, 255);
+   
+ }
+=======
   /* margin: 20px; */
   font-family: "Paytone One";
   color: pink;
@@ -189,6 +283,7 @@ h2 span {
   color: white;
 }
 
+>>>>>>> f2701a2bbe69aa7c63d63b5a20482f4b18ca9f77
 /* login */
 
 /* icons */
@@ -197,6 +292,9 @@ h2 span {
   background-color: rgba(214, 143, 155, 0.425);
 }
 
+<<<<<<< HEAD
+
+=======
 /* squares */
 
 .bubbles {
@@ -426,6 +524,7 @@ h2 span {
     rotate(630deg);
   }
 }
+>>>>>>> f2701a2bbe69aa7c63d63b5a20482f4b18ca9f77
 
 .wrapper {
   padding-top: 50px;
@@ -450,6 +549,32 @@ h2 span {
 	z-index: 10000;
 } */
 
+<<<<<<< HEAD
+/* 
+on scroll remove navbar background 
+make link fixed to top of window
+rome particles 
+remove glow
+serif -heading
+sans serif -body
+
+
+
+Add a footer
+
+
+
+*/
+
+/* navbar
+flexbox across the page
+
+
+
+
+
+*/
+=======
 /* .overlay  */
 
 .modal {
@@ -464,3 +589,4 @@ h2 span {
 	/* background-color: white; */
 }
 /* 1 */
+>>>>>>> f2701a2bbe69aa7c63d63b5a20482f4b18ca9f77

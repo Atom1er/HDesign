@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar-user.css';
+
 import Axios from "axios";
 
+
+library.add(faSignInAlt)
 
 
 // const NavbarUser = props => (
 class NavbarUser extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -79,12 +83,14 @@ class NavbarUser extends React.Component {
 
 
 
-
 }
 
 
 
-
+   
 
 
 export default NavbarUser;
+
+
+
