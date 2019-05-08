@@ -63,7 +63,7 @@ state={
         return (
             <div className="widget-div">
                     <div>
-                        <button className="upload-button">Upload Picture</button>
+                        <button className="upload-button btn-outline-success">Upload Picture</button>
                     </div>
                 
             </div>

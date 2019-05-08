@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import Images from '../components/Images';
+import axios from "axios";
 import "./Pages.css";
+
 
 class Decor extends Component {
     // Initialize the state
     state = {
         arrPhoto: [],
         showPhoto: 5,
-        showPhoto2: 10
+        showPhoto2: 10,
+        name: this.props.user.email
     }
 
     // Fetch the list on first mount
@@ -23,42 +26,73 @@ class Decor extends Component {
         console.log(this.state.list);
     }
 
+    handleClick = (url) => {
+        const fav = {
+            user_email: this.state.name,
+            item_name: url
+        };
+
+        // Send an AJAX POST-request//
+        axios.post("/api/db/favItems", fav)
+            .then(function (data) {
+            });
+    }
+
     render() {
 
-        const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
+        const photosUrl = this.state.arrPhoto.map(
             (images) => <Images
+                key={images.public_id}
                 id={images.public_id}
                 url={images.url}
+                handleClick={this.handleClick}
             />
         )
 
-        const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
-            (images) => <Images
-                id={images.public_id}
-                url={images.url}
-            />
-        )
+        // const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
+        //     (images) => <Images
+        //         key={images.public_id}
+        //         id={images.public_id}
+        //         url={images.url}
+        //         handleClick={this.handleClick}
+        //     />
+        // )
+
+        // const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
+        //     (images) => <Images
+        //         key={images.public_id}
+        //         id={images.public_id}
+        //         url={images.url}
+        //         handleClick={this.handleClick}
+        //     />
+        // )
 
         return (
 
             <div>
-                <div className="row">
-                    <div className="col-1" />
-                    {photosUrl}
-                    <div className="col-1" />
+                <br />
+                <div className="jumbotron-fluid text-center">
+                    <i style={{ fontSize: "50px" }}>Decor</i>
                 </div>
-                <div className="jumbotron text-center">
-                    <h1>Decor</h1>
-                    <hr />
-                    <h3>World of Decor</h3>
-                </div>
-                <div className="row">
-                    <div className="col-1" />
-                    {photosUrl2}
-                    <div className="col-1" />
-                </div>
-            </div>
+                <br />
+                <br />
+                {/* <div className="row"> */}
+                    {/* <div className="col-1" /> */}
+                    {/* <div className="image-container col-10">{photosUrl}</div> */}
+                    <div className="wrapper">{photosUrl}</div>
+                    {/* <div className="col-1" /> */}
+                {/* </div> */}
+                <br />
 
+                {/* <br /> */}
+                {/* <div className="row"> */}
+                    {/* <div className="col-1" /> */}
+                    {/* <div className="image-container col-10">{photosUrl2}</div> */}
+                    {/* {photosUrl2} */}
+                    {/* <div className="col-1" /> */}
+                {/* </div> */}
+                {/* <br /> */}
+            </div>
         );
     }
 }

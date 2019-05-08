@@ -15,4 +15,5 @@ USE users_database;
 
 INSERT INTO users (user_name, user_email, user_password, user_favorites, createdAt, updatedAt)
 VALUES ("William", "test@test.com", "blablbalba", "sofa", '10:30', '3:45');
- SELECT * FROM users;
+SELECT * FROM users;
+SELECT * FROM favItems;
