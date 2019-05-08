@@ -51,11 +51,10 @@ class Users extends Component {
                     {arr.map(user => (
                     <table>
                     <tr>
-                        <td>{user.user_name}</td>
+                        <td>{user.user_name}{user.user_email}</td> 
+                        
                     </tr>
-                    <tr>
-                        <td>{user.user_email}</td>
-                    </tr>
+                    
                     
                     </table>))}
                 </div>
