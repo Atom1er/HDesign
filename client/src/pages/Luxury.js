@@ -35,6 +35,8 @@ class Luxury extends Component {
         // Send an AJAX POST-request//
         axios.post("/api/db/favItems", fav)
             .then(function (data) {
+                console.log("Added to favorites")
+                alert("Added to favorites");
             });
     }
 
@@ -99,3 +101,6 @@ class Luxury extends Component {
 }
 
 export default Luxury;
+// const photosUrl = this.state.arrPhoto;
+//         const item = photosUrl.map(x => ({ origina: x.url, thumbnail: x.url }));
+//         console.log(item);

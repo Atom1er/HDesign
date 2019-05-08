@@ -17,13 +17,6 @@ function Images(props) {
         <button className="image-buton" onClick={() => props.handleClickCloud(props.id)}>Delete from cloud</button>
     </div>
 
-//function Images(props){
- //  return <div className='div-image'>
-  //     <img src={props.url} className='photos' alt="pics"></img>
-    //   <button className="image-buton" onClick={()=> props.handleClickCloud(props.id)}>Delete from cloud</button>
-      // </div>
-
-
 }
 
 export default Images;

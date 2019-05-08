@@ -79,25 +79,21 @@
 }
 
 .heart {
-  font-size: 50px;
-  opacity: 0;
-  position: relative;
-  bottom: -50px;
-}
-
-.hover-me {
-  text-align: center;
-}
-
-.hover-me:hover .heart{
-  color: #f953c6;
-  opacity: 1;
-}
-
-.image-box {
+  padding-right: 10px;
+  float: right;
+ 
+ }
+ 
+ .heart:hover {
+  color: red;
+ }
+ 
+ .image-box {
   display: inline-block;
-}
-
-.hover-me:hover{
-  transform: scale(1.5);
-}
+ }
+ 
+ .personal-image {
+  width: 500px;
+  height: 400px;
+  background-size: cover;
+ }

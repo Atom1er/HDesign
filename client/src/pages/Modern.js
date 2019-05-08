@@ -66,27 +66,10 @@ class Modern extends Component {
                 id={images.public_id}
                 url={images.url}
                 handleClick={this.handleClick}
-                openModalHandler={this.openModalHandler}
+                // openModalHandler={this.openModalHandler}
             />
         )
 
-        // const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
-        //     (images) => <Images
-        //         key={images.public_id}
-        //         id={images.public_id}
-        //         url={images.url}
-        //         handleClick={this.handleClick}
-        //     />
-        // )
-
-        // const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
-        //     (images) => <Images
-        //         key={images.public_id}
-        //         id={images.public_id}
-        //         url={images.url}
-        //         handleClick={this.handleClick}
-        //     />
-        // )
 
         return (
 
@@ -97,11 +80,11 @@ class Modern extends Component {
                 </div>
                 {/* <br />
                 <br /> */}
-                <Modal
+                {/* <Modal
                     // className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}>
-                </Modal>
+                </Modal> */}
                 {/* <div className="row"> */}
                     {/* <div className="col-1" /> */}
                     {/* <div className="image-container col-10">{photosUrl}</div> */}
