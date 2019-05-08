@@ -1,4 +1,4 @@
-.photos {
+/* .photos {
   padding: 10px;
   margin: 0;
   padding: 0;
@@ -8,9 +8,9 @@
   vertical-align: baseline;
   height: 40vh;
   z-index: 1;
-}
+} */
 
-.photos {
+/* .photos {
   width: 100%;
   height: 500px;
   -o-object-fit: cover;
@@ -21,13 +21,13 @@
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
+} */
 
-.photos:hover {
+/* .photos:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
-}
+} */
 
 .img-content-hover {
   position: absolute;
@@ -79,19 +79,13 @@
 }
 
 .heart {
-  font-size: 50px;
-  opacity: 0;
-  position: relative;
-  bottom: -50px;
+  padding-right: 10px;
+  float: right;
+ 
 }
 
-.hover-me {
-  text-align: center;
-}
-
-.hover-me:hover .heart{
-  color: #f953c6;
-  opacity: 1;
+.heart:hover {
+  color: red;
 }
 
 .image-box {

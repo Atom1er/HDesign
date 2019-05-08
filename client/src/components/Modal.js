@@ -14,7 +14,7 @@ const modal = (props) => {
                 <div>
                 <span className="close-modal-btn" onClick={props.close}>×</span>
                 
-                <div style={{ backgroundImage: `url(${props.url})`, backgroundSize: "cover", height: "200px", width: "300px",borderRadius: "20px", margin: "10px"}}></div>
+                    {props.photosUrl}
 
                 </div>
                 <div className="modal-footer">
