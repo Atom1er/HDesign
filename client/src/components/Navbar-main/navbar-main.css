@@ -1,0 +1,17 @@
+.nav-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10vh;
+    width: 100vw;
+   
+}
+
+.nav-main ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    list-style-type: none;
+}

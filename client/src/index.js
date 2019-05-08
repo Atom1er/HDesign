@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 // import registerServiceWorker from "./registerServiceWorker";
 import './index.css';
 import App from './App';
-import PhotoWidgetUploader from './components/PhotoWidgetUploader';
+// import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 
 render((
     <BrowserRouter>

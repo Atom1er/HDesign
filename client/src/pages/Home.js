@@ -1,76 +1,82 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Home extends Component {
   render() {
     return (
-      <div className="homey">
-        {/* <div className='img1'>nnn</div> */}
+      <div className="h">
+        <div class="container-fullwidth">
+        <div id="box1">
 
-        <div class="container-fluid">
-          {/* parralax */}
-          <main class="wrapper">
-            <section class="section parallax bg3">
-              <h1>
-                {" "}
-                Modern
-                <br />
-                <Link to="./Modern">
-                  <button
-                    type="button"
-                    class="btn  btn-outline-warning   btn-lg"
-                  >
-                    Modern Route
-                  </button>
-                </Link>
-              </h1>
-            </section>
 
-            <section class="section static">
-              <blockquote class="blockquote text-center">
-                <p class="mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer posuere erat a ante.
-                </p>
-                <footer class="blockquote-footer">
-                  Someone famous in{" "}
-                  <cite title="Source Title">Source Title</cite>
-                </footer>
-              </blockquote>
-            </section>
+        
+            <h2>
+               {/* {" lalalalalal"}  */}
+              <span>Modern </span> <span>Design</span>
+              {/* {" ggf"} */}
+            </h2>
+            <h2 className='happy'> {" an interior design lookbook"}
+            
+            <br/>
+            
+            <button class='button btn btn--future'>Discover More</button>
+            </h2>
+           
+          </div>
 
-            <section class="section parallax bg1">
-              <p>
-                MASTERPIECE <br /> <h1>FINEST DESIGNS FOR YOUR HOME</h1>
-              </p>
-            </section>
+          <div id="box2">
+         
+            <h1 className='master'>
+           
+            Decor
+            <br />
+            <h2 className='happy'> {"  a place for interior design perpective"} </h2>
+            
+              <button class=' button btn btn--future'>Discover More</button>
+            </h1>
+           
+          </div>
 
-            <section class="section static">
-              <h1 class="elegantshadow">Modern Design </h1>
-            </section>
+        {/* <div id="box6">
+            <h2>
+              h
+            </h2>
+           
+          </div> */}
 
-            <section class="section parallax bg2">
-              <h1>Live To Inspire</h1>
-            </section>
+          <div id="box3">
+          
+          <h1 className='master'> Luxury Goods <br/>
+          
+          <blockquote class="blockquote text-center" style={{color:'#D8B830'}}>
+  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+           
+              <button class='button btn btn--future'>Discover More</button>
+            </h1>
+          </div>
+         
 
-            <section class="section static">
-              <p>hhfjdjd</p>
-            </section>
-
-            {/* <section class="section parallax bg4">
-    <h1>SO FWUFFY AWWW</h1>
-  </section> */}
-
-            <section class="section parallax bg5">
-              <h1>SO FWUFFY AWWW</h1>
-            </section>
-          </main>
-
-          {/* <Link to='./list'>
-        <button variant="raised">
-            My List
-        </button>
-      </Link> */}
+          {/* <div id="box5">
+            <h2>
+               hs
+            </h2>
+           
+          </div> */}
+         
+         
+          
+          <div id="box4">
+          <h1 className='master'>
+           
+           Masterpiece
+           <br />
+           <h2 className='happy'> {"  erras of beauty"} </h2>
+           
+             <button class=' button btn btn--future'>Discover More</button>
+           </h1>
+          </div>
         </div>
       </div>
     );
