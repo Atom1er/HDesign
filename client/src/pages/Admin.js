@@ -9,11 +9,61 @@ import DecorAdmin from "./admin-Components/DecorAdmin";
 import LuxuryAdmin from "./admin-Components/LuxuryAdmin";
 import AntiqueAdmin from "./admin-Components/AntiqueAdmin";
 import NavbarAdmin from './admin-Components/NavbarAdmin';
-import './admin-Components/admin.css';
 import Welcome from './admin-Components/Welcome';
-
+import './admin-Components/admin.css';
 
 class Admin extends Component {
+    // Initialize the state
+    state = {
+        arrPhoto: []
+    }
+
+    // Fetch the list on first mount
+    componentDidMount() {
+        this.getPhotos();
+    }
+
+    // Retrieves the list of items from the Express app
+    getPhotos = () => {
+        fetch('/api/get_photos/modern')
+            .then(res => res.json())
+            .then(arrPhoto => this.setState({ arrPhoto: arrPhoto.resources }));
+        console.log(this.state.list);
+    }
+
+    //TO DO: to grab url from image and send it to db //
+    // handleClick = (url) => {
+    //     const fav = {
+    //         item_name: url,
+    //     };
+
+    //     // Send an AJAX POST-request//
+    //     axios.post("/api/db/favItems", fav)
+    //         .then(function (data) {
+    //         });
+    // }
+
+    handleClickDelete = (url) => {
+        const url2 = {
+            item_name: url,
+        };
+
+        // Send an AJAX POST-request//
+        axios.post("/api/db/favItemsDelete", url2)
+            .then(function (data) {
+            });
+    }
+
+    handleClickCloud = (id) => {
+        const imgId = {
+            publicId: id
+        }
+
+        // Send an AJAX POST-request//
+        axios.post('/api/cloud/public_id', imgId)
+            .then(function (data) {
+            });
+    }
 
     render() {
 

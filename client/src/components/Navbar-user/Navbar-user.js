@@ -5,7 +5,7 @@ import './Navbar-user.css';
 import Axios from "axios";
 
 
-library.add(faSignInAlt)
+// library.add(faSignInAlt)
 
 
 // const NavbarUser = props => (
