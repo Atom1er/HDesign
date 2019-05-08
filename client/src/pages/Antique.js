@@ -36,6 +36,8 @@ class Antique extends Component {
         // Send an AJAX POST-request//
         axios.post("/api/db/favItems", fav)
             .then(function (data) {
+                console.log("Added to favorites")
+                alert("Added to favorites");
             });
     }
 
