@@ -1,45 +1,26 @@
 // export default App;
-// <<<<<<< HEAD
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home";
-import Admin from "./components/Admin";
 
-import SignUp from "./components/LogsignIn/SignUp";
-import LogIn from "./components/LogIn/LogIn";
-import RedirectGoogleAuth from "./components/RedirectGoogleAuth";
+import React, { Component, Redirect } from 'react';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
 
-import List from "./components/List";
-import PhotoWidgetUploader from "./components/PhotoWidgetUploader";
-import UsersDb from "./components/UsersDb";
-// test one two threeeee
 
-// =======
-// import React, { Component } from 'react';
-// import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-// import './App.css';
+// import SignUp from './components/SignUp';
+import SUP from './components/sign-up';
+// import LogIn from './components/LogIn';
+import RedirectGoogleAuth from './components/RedirectGoogleAuth';
+import LoginLocal from './components/login-local';
+import PersonalAccount from './components/personal-account';
+import Logout from './components/logout';
+import Users from './components/Users';
 
-// // import SignUp from './components/SignUp';
-// import SUP from './components/sign-up';
-// // import LogIn from './components/LogIn';
-// import RedirectGoogleAuth from './components/RedirectGoogleAuth';
-// import LoginLocal from './components/login-local';
-// import PersonalAccount from './components/personal-account';
-// import Logout from './components/logout';
-// import Users from './components/Users';
-// //Import components for admin site //
-// import ModernAdmin from "./pages/admin-Components/ModernAdmin";
-// import DecorAdmin from "./pages/admin-Components/DecorAdmin";
-// import LuxuryAdmin from "./pages/admin-Components/LuxuryAdmin";
-// import AntiqueAdmin from "./pages/admin-Components/AntiqueAdmin";
 
-// // import List from './components/List';
-// import PhotoWidgetUploader from './components/PhotoWidgetUploader';
-// import UsersDb from './components/UsersDb';
+// import List from './components/List';
+import PhotoWidgetUploader from './components/PhotoWidgetUploader';
+import UsersDb from './components/UsersDb';
 
-// import Home from './pages/Home';
-// >>>>>>> f2701a2bbe69aa7c63d63b5a20482f4b18ca9f77
+import Home from './pages/Home';
+
 import Modern from "./pages/Modern";
 import Decor from "./pages/Decor";
 import Luxury from "./pages/Luxury";
@@ -114,7 +95,19 @@ class App extends Component {
         }
       });
     }
-  };
+
+  }
+  
+
+  logOut=()=>{
+    LocalAPI.getLogout().then((res)=>{
+      this.setUser({});
+      return <Redirect to='/'/>
+      
+
+    })
+  }
+
 
   setUser = user => {
     this.setState({
@@ -126,66 +119,26 @@ class App extends Component {
     return (
       <Router>
         <Container>
-          <NavbarUser user={this.state.user} />
+
+          <NavbarUser user={this.state.user} logOut={this.logOut}/>
+
           <NavbarMain />
           <Switch>
             {/* <Route exact path= '/Users' component={Users}/> */}
             <Route exact path="/" component={Home} />
             {/* <Route exact path='/modern' render={()=>(<Modern {...this.props}/>)}  component={Modern} /> */}
-            <Route
-              exact
-              path="/modern"
-              render={() => (
-                <Modern
-                  {...this.props}
-                  setUser={this.setUser}
-                  user={this.state.user}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/decor"
-              render={() => (
-                <Decor
-                  {...this.props}
-                  setUser={this.setUser}
-                  user={this.state.user}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/luxury"
-              render={() => (
-                <Luxury
-                  {...this.props}
-                  setUser={this.setUser}
-                  user={this.state.user}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/antique"
-              render={() => (
-                <Antique
-                  {...this.props}
-                  setUser={this.setUser}
-                  user={this.state.user}
-                />
-              )}
-            />
-            <Route exact path="/admin" component={Admin} />
 
-            <Route exact path="/modernadmin" component={ModernAdmin} />
-            <Route exact path="/luxuryadmin" component={LuxuryAdmin} />
-            <Route exact path="/decoradmin" component={DecorAdmin} />
-            <Route exact path="/antiqueadmin" component={AntiqueAdmin} />
+            <Route exact path="/modern" render={() => (<Modern {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/decor" render={() => (<Decor {...this.props} setUser={this.setUser} user={this.state.user} />)} />
+            <Route exact path="/luxury" render={() => (<Luxury {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/antique" render={() => (<Antique {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path='/admin' component={Admin} />
 
-            <Route exact path="/login" component={LogIn} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/sign-up" component={SUP} />
+            
+            <Route exact path='/login' component={LogIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/sign-up' component={SUP} />
+
             <Route exact path="/logout" component={Logout} />
             <Route
               exact
