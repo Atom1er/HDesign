@@ -41,9 +41,14 @@ class NavbarUser extends React.Component {
           style={{ textDecoration: "none", color: "black" }}>
           <span className="md">MD</span>
         </Link>
+        
 
-        <ul>
-          <li className="nav-item">
+        <ul>{(this.props.user.name ? (<li className="nav-item"><Link to="/personal-account"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
+         
+          <div>
+              <Search/>
+            </div>
+            <li className="nav-item">
             <Link to="/login-local"
               className="nav-link"
               style={{ textDecoration: "none", color: "black" }}>
@@ -65,15 +70,6 @@ class NavbarUser extends React.Component {
               <p className="nav-hover">Sign Up</p>
             </Link>
           </li>
-          <li className="nav-item">
-            <div
-              className="nav-link"
-              style={{ textDecoration: "none", color: "black" }}>
-              <Search/>
-            </div>
-          </li>
-
-          {(this.props.user.name ? (<li className="nav-item"><Link to="/personal-account"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
         </ul>
       </nav>
     )

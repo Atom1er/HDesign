@@ -9,30 +9,23 @@ class Search extends React.Component {
         this.state = {
             value: '',
             results: [],
+            
         };
 
 
         this.handleChange = this.handleChange.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+// componentDidMount(){
+//     this.handleSubmit();
+// }
     handleChange = (event) => {
         this.setState({ value: event.target.value });
     }
 
-    handleSubmit = () => {
+    
 
-        // event.preventDefault();    
-        const userSearch = {
-            value: this.state.value
-        }
-        console.log(userSearch.value);
-        axios.post('/api/cloud/user/search', userSearch)
-            .then(res => {
-                console.log(res);
-                this.setState({ results: res.data.resources });
-            })
-    }
+   
 
 
 
@@ -44,14 +37,18 @@ class Search extends React.Component {
                 <label>
                     <input type="text" onChange={this.handleChange} />
                 </label>
-                <button className="nav-hover" onClick={this.handleSubmit}>
-                    <Link to={{
-                        pathname: "./results",
-                        state: { value: this.state.results }
-                    }}
-                        className="nav-link"
-                        style={{ textDecoration: "none", color: "black" }} />
-                Go</button>
+
+                <Link to={{
+                    pathname: "./results/"+this.state.value,
+                    state: { value: this.state.results }
+                }}
+                    className="navbar-brand"
+                    aria-label="Bootstrap"
+                    style={{ textDecoration: "none", color: "black" }}
+                    style={{ textDecoration: "none", color: "black" }} >
+                    <button className="btn-dark btn-sm" onClick={this.handleSubmit}>Go</button>
+                </Link>
+
             </div>
         )
     }
