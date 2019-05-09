@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import queryString from "query-string";
 import LOCALAPI from '../utils/local-auth';
+import './signUp.css';
 import { Link, Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
@@ -34,30 +35,6 @@ handleFormSubmit = event => {
     }).then(res =>{
       console.log(res)
     });
-    //    LOCALAPI.loginUser({
-    //         user_email: this.state.email,
-    //         user_password: this.state.password
-    //     }).then( response => {
-    //         let user = response.data;
-    //         // make sure we have an email
-    //         if(user && user.email){
-    //             this.props.setUser(user);
-    //             this.setState({
-    //                 errorMessage: null
-    //             });
-    //         }
-    //         else{
-    //             this.setState({
-    //                 errorMessage: "Could not log in"
-    //             });
-    //         }
-            
-    //     }).catch( error => {
-    //         this.setState({
-    //             errorMessage: "Could not log in"
-    //         });
-    //     })
-    // })
 }
 
 
@@ -70,9 +47,6 @@ handleFormSubmit = event => {
 }
 
   render() {
-  //   if(this.props.user && this.props.user.email){
-  //     return <Redirect to="/personal-account"/>;
-  // }
     return (
       <div className='login '>
       <div>
@@ -82,7 +56,7 @@ handleFormSubmit = event => {
   <div className="container-login100">
     <div className="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
     <form className="login100-form validate-form">
-    <span className="login100-form-title p-b-55">
+    <span className="login100-form-title p-b-55 header">
 						Login
 					</span>
               <div className="wrap-input100 validate-input m-b-16">

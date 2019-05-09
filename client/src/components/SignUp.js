@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LOCALAPI from '../utils/local-auth';
 import { Redirect } from 'react-router-dom';
 
+
 class LoginLocal extends Component{
     state = {
         name: "",
@@ -53,7 +54,7 @@ class LoginLocal extends Component{
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5 bg-light">
             <div class="card-body">
-            <h5 class="card-title text-center">Sign Up</h5>
+            <h5 class="card-title text-center header">Sign Up</h5>
                 <form className="form-signin">
                     <div className="form-label-group">
                         <div>Name:</div>
