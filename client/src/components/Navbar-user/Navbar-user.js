@@ -27,7 +27,7 @@ class NavbarUser extends React.Component {
     return (
       <nav className='nav-user'> 
 
-        <Link to="./"
+        <Link to="/"
           className="navbar-logo navbar-brand mr-0 mr-md-2 mt-0"
           aria-label="Bootstrap"
           style={{ textDecoration: "none", color: "black" }}>
