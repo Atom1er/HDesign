@@ -8,7 +8,7 @@ class PersonalAccount extends Component {
 
     state = {
         item: [],
-        name: this.props.user.email
+        name: this.props.user.name
     }
 
     componentDidMount() {

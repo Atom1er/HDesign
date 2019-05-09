@@ -30,7 +30,7 @@ import NavbarUser from "./components/Navbar-user/Navbar-user";
 
 // import Navbar from "./components/Navbar";
 import Admin from './pages/Admin';
-import SignUp from './pages/SignUp';
+import SignUp from './components/SignUp';
 import LogIn from './pages/LogIn';
 // import Footer from "./components/Footer";
 // =======
