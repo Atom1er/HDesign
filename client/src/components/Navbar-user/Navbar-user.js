@@ -42,10 +42,10 @@ class NavbarUser extends React.Component {
       <nav className='nav-user'> 
 
         <Link to="./"
-          className="navbar-brand mr-0 mr-md-2"
+          className="navbar-logo navbar-brand mr-0 mr-md-2 mt-0"
           aria-label="Bootstrap"
           style={{ textDecoration: "none", color: "black" }}>
-          <span className="md">MD</span>
+          <span className="md"><img src="./hdesign.png" width="100px" height="50px" alt="hdesign logo"></img></span>
         </Link>
 
         <ul>

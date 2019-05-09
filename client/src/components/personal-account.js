@@ -50,11 +50,13 @@ class PersonalAccount extends Component {
                     //  ${this.props.user.email}
                     <div>
                         <h3>Welcome : {this.state.name}</h3>
+                        <div className="container">
                         {favs.map(favsUrl => (
                             <Images key={favsUrl.id}
                                 url={favsUrl.item_name}
                                 handleClickDelete={this.handleClickDelete} />
                         ))}
+                        </div>
                     </div>
                 ) : (<p>{`Please sign in at `} <Link to="/">Homepage</Link> </p>)}
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Logout () {
     return (
-        <p>Logged out</p>
+        <button className="btn">Logged out</button>
     )
 };
 

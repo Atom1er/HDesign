@@ -11,8 +11,15 @@
     background: #ffffff;
     z-index: 100;
 }
-
+.nav-user .navbar-logo{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
 .nav-user ul{
+    position: absolute;
+    top: 5px;
+    right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;

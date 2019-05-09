@@ -10,6 +10,11 @@
   z-index: 1;
 }
 
+.fav-images{
+  background-color: black;
+  margin-top: 15px;
+}
+
 .photos {
   width: 100%;
   height: 500px;
