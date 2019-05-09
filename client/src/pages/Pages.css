@@ -170,18 +170,21 @@ align-items: center;
    width: calc(100% + 15px);
    height: 60px;
    transition: 0.5s ease;
+   color: white;
  }
  .btn--future::after {
    top: -15px;
    left: -15px;
    border-right: none;
    border-bottom: none;
+   color: white;
  }
  .btn--future::before {
    bottom: -15px;
    right: -15px;
    border-left: none;
    border-top: none;
+   color: white;
  }
  .btn--future:hover:after, .btn--future:hover:before {
    width: calc(100% - 30px);
@@ -193,7 +196,7 @@ align-items: center;
 h2{
   /*margin: 20px; */
   font-family: "Paytone One";
-  color: pink;
+  color:#D8B830;
   text-transform: uppercase;
   letter-spacing: -2px;
 }
@@ -241,8 +244,8 @@ h2 span {
   margin: 40px;
   font-family: 'Merriweather', serif;
   white-space: nowrap;
-  color: rgb(8, 8, 8);
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+  color: rgb(255, 255, 255);
+  
   text-align: center;
   align-items: center;
 }

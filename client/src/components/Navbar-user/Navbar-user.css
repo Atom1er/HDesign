@@ -8,8 +8,10 @@
     top: 0;
     height: 10vh;
     width: 100vw;
-    background: #ffffff;
+    background: #c98080;
+    /* background: #0c0c0c; */
     z-index: 100;
+    color: white;
 }
 .nav-user .navbar-logo{
     position: absolute;
@@ -42,7 +44,8 @@
     margin-left: 0px;
     font-size: 50px;
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Oswald', sans-serif;
+    background: black;
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LOCALAPI from '../utils/local-auth';
 import { Link, Redirect } from 'react-router-dom';
+import './local.css';
 
 class LoginLocal extends Component{
     state = {
@@ -62,11 +63,11 @@ class LoginLocal extends Component{
             return this.props.user.name == 'Admin' ? (<Redirect to="/admin"/>) :(<Redirect to="/"/>);
         }
         return (
-            <div class="container">
+            <div class="container ">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5 bg-light">
             <div class="card-body">
-            <h5 class="card-title text-center">Log In</h5>
+            <h5 class="card-title text-center" >Log In</h5>
                 <form className="form-signin">
                     <div className="form-label-group">
                         <div>Email:</div>
