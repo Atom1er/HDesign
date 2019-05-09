@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar-user.css';
+import Search from "../../pages/Search";
 
 import Axios from "axios";
 
@@ -34,6 +35,7 @@ class NavbarUser extends React.Component {
         </Link>
 
         <ul>
+          <Search />
         {(!this.props.user ? (<li className="nav-item"> <Link to="./signup" className="nav-link" style={{ textDecoration: "none", color: "black" }}> <p className="nav-hover"><i className="far fa-user"></i>Sign Up</p> </Link> </li>):"")}
           {(!this.props.user ? (<li className="nav-item"><Link to="/login-local" className="nav-link" style={{ textDecoration: "none", color: "black" }}> <p className="nav-hover"><i className="far fa-user"></i> Log In</p> </Link> </li>) : "")}
           {(this.props.user.name === 'Admin' ? (<li className="nav-item"><Link to="/admin"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}

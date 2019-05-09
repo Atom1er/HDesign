@@ -104,7 +104,8 @@ app.use(passport.session());
 // Getting images with tag 'modern'//
 app.get('/api/get_photos/modern', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
-    cloudinary.v2.api.resources_by_tag('modern',
+    cloudinary.v2.api.resources_by_tag('modern', 
+    {max_results: 20},
         function (err, results) {
             // console.log(results)  
             res.json(results);
@@ -116,6 +117,7 @@ app.get('/api/get_photos/modern', (req, res) => {
 app.get('/api/get_photos/luxury', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
     cloudinary.v2.api.resources_by_tag('luxury',
+    {max_results: 20},
         function (err, results) {
             // console.log(results)  
             res.json(results);
@@ -127,6 +129,7 @@ app.get('/api/get_photos/luxury', (req, res) => {
 app.get('/api/get_photos/antique', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
     cloudinary.v2.api.resources_by_tag('antique',
+    {max_results: 20},
         function (err, results) {
             // console.log(results)  
             res.json(results);
@@ -138,6 +141,7 @@ app.get('/api/get_photos/antique', (req, res) => {
 app.get('/api/get_photos/decor', (req, res) => {
     // cloudinary.v2.api.resources_by_tag('tag name') to get images with tag name
     cloudinary.v2.api.resources_by_tag('decor',
+    {max_results: 20},
         function (err, results) {
             // console.log(results)  
             res.json(results);
@@ -151,7 +155,19 @@ app.post('/api/cloud/public_id', (req, res) => {
     cloudinary.v2.uploader.destroy(public, function (error, result) {
         console.log(result)
     });
-})
+});
+
+//TO DO: Search image from home page search engine //
+app.post('/api/cloud/user/search', (req, res) => {
+    var searchUser = req.body.value;
+    // console.log('testt!!!!!!!!' + searchUser);
+    cloudinary.v2.api.resources_by_tag(searchUser,
+        {max_results: 100},
+        function (err, result) {
+            // console.log(result)
+            res.json(result);
+        });
+ })
 
 cloudinary.config({
     cloud_name: Keys.cloud_name,

@@ -10,6 +10,7 @@ import LoginLocal from './components/login-local';
 import PersonalAccount from './components/personal-account';
 import Logout from './components/logout';
 import Users from './components/Users';
+import Results from "./pages/Results";
 
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 import UsersDb from './components/UsersDb';
@@ -87,6 +88,7 @@ class App extends Component {
             <Route exact path="/decor" render={() => (<Decor {...this.props} setUser={this.setUser} user={this.state.user} />)} />
             <Route exact path="/luxury" render={() => (<Luxury {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path="/antique" render={() => (<Antique {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/results/:query" render={() => (<Results {...this.props} setUser={this.setUser} user={this.state.user}  />)} component={Results} />
             <Route exact path="/admin" render={() => (<Admin {...this.props} user={this.state.user} />)}/>            
             <Route exact path='/login' component={LogIn} />
             <Route path='/signup' component={SignUp} />
