@@ -59,7 +59,7 @@ class LoginLocal extends Component{
     // }
     render() {
         if(this.props.user && this.props.user.email){
-            return <Redirect to="/"/>;
+            return this.props.user.name == 'Admin' ? (<Redirect to="/admin"/>) :(<Redirect to="/"/>);
         }
         return (
             <div class="container">

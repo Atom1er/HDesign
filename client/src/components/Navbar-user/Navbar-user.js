@@ -5,10 +5,6 @@ import './Navbar-user.css';
 import Axios from "axios";
 
 
-// library.add(faSignInAlt)
-
-
-// const NavbarUser = props => (
 class NavbarUser extends React.Component {
 
   constructor(props) {
@@ -26,17 +22,6 @@ class NavbarUser extends React.Component {
   };
 
   render() {
-
-    let isLoggedIn = this.state.loggedIn;
-    // let icon;
-
-    if (isLoggedIn) {
-
-    }
-    else {
-      // icon = <FontAwesomeIcon icon={faSignInAlt} />
-
-    }
 
     return (
       <nav className='nav-user'> 
@@ -71,8 +56,8 @@ class NavbarUser extends React.Component {
               <p className="nav-hover">Sign Up</p>
             </Link>
           </li>
-
-          {(this.props.user.name ? (<li className="nav-item"><Link to="/personal-account"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
+          {(this.props.user.name === 'Admin' ? (<li className="nav-item"><Link to="/admin"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
+          {(this.props.user.name !== 'Admin' ? (<li className="nav-item"><Link to="/personal-account"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
 
         </ul>
 

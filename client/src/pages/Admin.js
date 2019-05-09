@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Redirect, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 //Import components for admin site //
 import Users from "./admin-Components/Users";
@@ -15,13 +15,18 @@ import './admin-Components/admin.css';
 class Admin extends Component {
     // Initialize the state
     state = {
-        arrPhoto: []
+        arrPhoto: [],
+        name: ""
     }
 
+
+
     // Fetch the list on first mount
-    componentDidMount() {
-        this.getPhotos();
-    }
+    // componentDidMount() {
+    //     this.getPhotos();
+    //     console.log("props: "+this.props.user.name)
+    //     this.setState({name: this.props.user.name});
+    // }
 
     // Retrieves the list of items from the Express app
     getPhotos = () => {
@@ -30,18 +35,6 @@ class Admin extends Component {
             .then(arrPhoto => this.setState({ arrPhoto: arrPhoto.resources }));
         console.log(this.state.list);
     }
-
-    //TO DO: to grab url from image and send it to db //
-    // handleClick = (url) => {
-    //     const fav = {
-    //         item_name: url,
-    //     };
-
-    //     // Send an AJAX POST-request//
-    //     axios.post("/api/db/favItems", fav)
-    //         .then(function (data) {
-    //         });
-    // }
 
     handleClickDelete = (url) => {
         const url2 = {
@@ -66,25 +59,31 @@ class Admin extends Component {
     }
 
     render() {
-
-        return (
-            <div>
-            <Router>
-                <div className='admin-body'>
-                <NavbarAdmin />
-                    <Switch>
-                        <Route exact path='/admin' component={Welcome} />
-                        <Route exact path='/modernadmin' component={ModernAdmin} />
-                        <Route exact path='/luxuryadmin' component={LuxuryAdmin} />
-                        <Route exact path='/decoradmin' component={DecorAdmin} />
-                        <Route exact path='/antiqueadmin' component={AntiqueAdmin} />
-                        <Route exact path='/users' component={Users} />
-                    </Switch>
-
+        if(this.props.user && this.props.user.name === 'Admin'){
+            return (
+            
+                <div>
+                <Router>
+                    <div className='admin-body'>
+                    <NavbarAdmin />
+                        <Switch>
+                            <Route exact path='/admin' component={Welcome} />
+                            <Route exact path='/modernadmin' component={ModernAdmin} />
+                            <Route exact path='/luxuryadmin' component={LuxuryAdmin} />
+                            <Route exact path='/decoradmin' component={DecorAdmin} />
+                            <Route exact path='/antiqueadmin' component={AntiqueAdmin} />
+                            <Route exact path='/users' component={Users} />
+                        </Switch>
+    
+                    </div>
+                </Router>
                 </div>
-            </Router>
-            </div>
-        )
+            )
+            
+        } else {
+            return  (<Redirect to="/"/>);
+        }
+        
     }
 
 }
