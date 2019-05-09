@@ -30,6 +30,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "react-bootstrap": "^1.0.0-beta.8",
+    "react-medium-image-zoom": "^3.0.16",
     "react-medium-zoom": "^1.0.0",
     "react-parallax": "^2.2.0",
     "react-scroll-parallax": "^2.1.2",

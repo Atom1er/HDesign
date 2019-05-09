@@ -49,7 +49,7 @@ class PersonalAccount extends Component {
                 {this.props.user.email ? (
                     //  ${this.props.user.email}
                     <div>
-                        <h3>Welcome : {this.state.name}</h3>
+                        <h3>Welcome!!!</h3>
                         {favs.map(favsUrl => (
                             <Images key={favsUrl.id}
                                 url={favsUrl.item_name}

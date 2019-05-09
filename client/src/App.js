@@ -28,6 +28,8 @@ import "./components/Container.css";
 
 import NavbarMain from "./components/Navbar-main/Navbar-main";
 import NavbarUser from "./components/Navbar-user/Navbar-user";
+import Search from "./pages/Search";
+import Results from "./pages/Results";
 
 import Navbar from "./components/Navbar";
 import Admin from './pages/Admin';
@@ -62,8 +64,6 @@ class App extends Component {
     LocalAPI.getLogout().then((res)=>{
       this.setUser({});
       return <Redirect to='/'/>
-      
-
     })
   }
 
@@ -75,8 +75,10 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+      {this.props.children}
       <Router>
-        
+         
         <Container>
           <NavbarUser user={this.state.user} logOut={this.logOut}/>
           <NavbarMain />
@@ -88,6 +90,7 @@ class App extends Component {
             <Route exact path="/decor" render={() => (<Decor {...this.props} setUser={this.setUser} user={this.state.user} />)} />
             <Route exact path="/luxury" render={() => (<Luxury {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
             <Route exact path="/antique" render={() => (<Antique {...this.props} setUser={this.setUser} user={this.state.user} />)}/>
+            <Route exact path="/results" component={Results} />
             <Route exact path='/admin' component={Admin} />
 
             
@@ -111,6 +114,7 @@ class App extends Component {
           {/* <Footer /> */}
         </Container>
       </Router>
+      </div>
     );
    
   }

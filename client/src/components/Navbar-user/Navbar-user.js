@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar-user.css';
-import Axios from "axios";
+import Search from "../../pages/Search";
 
 
 
@@ -24,13 +24,11 @@ class NavbarUser extends React.Component {
   render() {
 
     let isLoggedIn = this.state.loggedIn;
-    // let icon;
 
     if (isLoggedIn) {
 
     }
     else {
-      // icon = <FontAwesomeIcon icon={faSignInAlt} />
 
     }
 
@@ -67,24 +65,19 @@ class NavbarUser extends React.Component {
               <p className="nav-hover">Sign Up</p>
             </Link>
           </li>
+          <li className="nav-item">
+            <div
+              className="nav-link"
+              style={{ textDecoration: "none", color: "black" }}>
+              <Search/>
+            </div>
+          </li>
 
           {(this.props.user.name ? (<li className="nav-item"><Link to="/personal-account"className="nav-link"style={{ textDecoration: "none", color: "black" }}><p className="nav-hover"><strong>{this.props.user.name}</strong></p> </Link></li>) : "" )}
-
         </ul>
-
-
       </nav>
     )
   }
-
-
-
-
 }
-
-
-
-
-
 
 export default NavbarUser;

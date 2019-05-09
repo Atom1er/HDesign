@@ -7,59 +7,10 @@ import "./admin.css";
 
 
 class Welcome extends Component {
-    // Initialize the state
-    // state = {
-    //     arrPhoto: [],
-    //     showPhoto: 5,
-    //     showPhoto2: 10,
-    // }
-
-    // // Fetch the list on first mount
-    // componentDidMount() {
-    //     // const { modern } = this.props.match.params;
-    //     this.getPhotos();
-    //     // this.setState({email: this.props.user.email});
-    // }
-
-    
-
-    // // Retrieves the list of items from the Express app
-    // getPhotos = () => {
-    //     fetch('/api/get_photos/decor')
-    //         .then(res => res.json())
-    //         .then(arrPhoto => this.setState({ arrPhoto: arrPhoto.resources }));
-    //     // console.log(this.state.list);
-    // }
-
-    // handleClick = (url) => {
-    //     const fav = {
-    //         user_email: this.state.name,
-    //         item_name: url
-    //         // user_email: this.state.email
-    //     };
-
-    //     // Send an AJAX POST-request//
-    //     axios.post("/api/db/favItems", fav)
-    //         .then(function (data) {
-    //             console.log("Added to favorites")
-    //             alert("Added to favorites");
-    //         });
-    // }
-    // handleClickCloud = (id) => {
-    //     const imgId = {
-    //         publicId: id
-    //     }
-
-    //     // Send an AJAX POST-request//
-    //     axios.post('/api/cloud/public_id', imgId)
-    //         .then(function (data) {
-    //         });
-    // }
-
-    // // 
+     
 
     render() {
-        // const photosUrl = this.state.arrPhoto;
+        
         return (
             <div className="container-admin">
                 <div className='new-photo-admin'>
