@@ -16,6 +16,12 @@
     top: 5px;
     left: 5px;
 }
+
+.md-logo{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
 .nav-user ul{
     position: absolute;
     top: 5px;

@@ -30,7 +30,7 @@ class NavbarUser extends React.Component {
           className="navbar-logo navbar-brand mr-0 mr-md-2 mt-0"
           aria-label="Bootstrap"
           style={{ textDecoration: "none", color: "black" }}>
-          <span className="md"><img src="./hdesign.png" width="100px" height="50px" alt="hdesign logo"></img></span>
+          <span className="md"><img className="md-logo" src="./hdesign.png" width="100px" height="50px" alt="hdesign logo"></img></span>
         </Link>
 
         <ul>

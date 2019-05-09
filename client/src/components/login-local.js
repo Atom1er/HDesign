@@ -64,7 +64,7 @@ class LoginLocal extends Component{
         return (
             <div class="container">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
+            <div class="card card-signin my-5 bg-light">
             <div class="card-body">
             <h5 class="card-title text-center">Log In</h5>
                 <form className="form-signin">
