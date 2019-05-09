@@ -24,7 +24,7 @@ const Navbar = props => (
       </li>
 
       <li className="nav-item"
-        style={{ borderLeft: "1px solid black" }}>
+      >
         <Link to="./luxury"
           className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }} >
