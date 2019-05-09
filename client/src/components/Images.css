@@ -82,18 +82,18 @@
   padding-right: 10px;
   float: right;
  
-}
-
-.heart:hover {
+ }
+ 
+ .heart:hover {
   color: red;
-}
-
-.image-box {
+ }
+ 
+ .image-box {
   display: inline-block;
-}
-
-.personal-image {
+ }
+ 
+ .personal-image {
   width: 500px;
   height: 400px;
   background-size: cover;
-}
+ }

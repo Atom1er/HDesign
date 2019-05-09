@@ -1,20 +1,33 @@
 import React from 'react';
 import Images from '../components/Images';
-import './Modal.css';
+// import './Modal.css';
 
 const modal = (props) => {
 
     return (
         <div>
-            <div className="modal-wrapper"
+            <div
+                className="modal-wrapper"
                 style={{
-                    transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
+                    // transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
                     opacity: props.show ? '1' : '0'
-                }}>
+                }}
+            >
                 <div>
-                <span className="close-modal-btn" onClick={props.close}>×</span>
-                
-                    {props.photosUrl}
+                    <span className="close-modal-btn" onClick={props.close}>×</span>
+
+                    <div
+                        // className='image-box hover col-12'
+                        //    onClick={() => props.handleClick(props.url)}
+                        onClick={props.openModalHandler}
+                        >
+                        <div>{props.images.url}</div>
+                        WHY!!
+                        
+
+                        {/* <img src={props.url} className='photos' alt={props.url}></img> */}
+                        {/* <button className='image-button' onClick={() => props.handleClick(props.url)}>Favorite</button> */}
+                    </div>
 
                 </div>
                 <div className="modal-footer">

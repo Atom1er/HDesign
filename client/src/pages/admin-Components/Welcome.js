@@ -66,7 +66,7 @@ class Welcome extends Component {
                     <h3>New Photo Upload for <strong>Page</strong></h3>
                     <hr></hr>
                     <p>Make sure to include "Decor", "Modern", "Luxury", or "Antique" tag in "advance options" when upload new photo</p>
-                    <hr></hr>
+                    
                 </div>
                 <div className="back-btn-admin">
                     <Widget/> 

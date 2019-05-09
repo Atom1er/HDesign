@@ -101,3 +101,6 @@ class Luxury extends Component {
 }
 
 export default Luxury;
+// const photosUrl = this.state.arrPhoto;
+//         const item = photosUrl.map(x => ({ origina: x.url, thumbnail: x.url }));
+//         console.log(item);

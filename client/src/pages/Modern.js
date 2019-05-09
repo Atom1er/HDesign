@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Pages.css";
 import Modal from '../components/Modal';
 
+
 class Modern extends Component {
     // Initialize the state
     state = {
@@ -68,26 +69,12 @@ class Modern extends Component {
                 handleClick={this.handleClick}
                 openModalHandler={this.openModalHandler}
             />
+            
         )
 
-        // const photosUrl = this.state.arrPhoto.slice(0, this.state.showPhoto).map(
-        //     (images) => <Images
-        //         key={images.public_id}
-        //         id={images.public_id}
-        //         url={images.url}
-        //         handleClick={this.handleClick}
-        //     />
-        // )
-
-        // const photosUrl2 = this.state.arrPhoto.slice(5, this.state.showPhoto2).map(
-        //     (images) => <Images
-        //         key={images.public_id}
-        //         id={images.public_id}
-        //         url={images.url}
-        //         handleClick={this.handleClick}
-        //     />
-        // )
-
+        const modalUrl = this.state.arrPhoto;
+        
+            console.log(photosUrl[0]);
         return (
 
             <div className="overlay">
@@ -99,13 +86,17 @@ class Modern extends Component {
                 <br /> */}
                 <Modal
                     // className="modal"
+                    images={photosUrl}
                     show={this.state.isShowing}
                     close={this.closeModalHandler}>
+                    
                 </Modal>
                 {/* <div className="row"> */}
                     {/* <div className="col-1" /> */}
                     {/* <div className="image-container col-10">{photosUrl}</div> */}
-                    <div className="wrapper">{photosUrl}</div>
+                    <div className="wrapper">
+                    {photosUrl}
+                    </div>
                     {/* <div className="col-1" /> */}
                 {/* </div> */}
                 <br />

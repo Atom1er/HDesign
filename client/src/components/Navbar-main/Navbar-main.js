@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import './navbar-main.css';
 
 
+// <<<<<<< HEAD
+
+
+
+
+
+
+// =======
 const Navbar = props => (
   <nav className='nav-main navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar"'>
     <ul>
@@ -46,3 +54,4 @@ const Navbar = props => (
 );
 
 export default Navbar;
+// >>>>>>> f2701a2bbe69aa7c63d63b5a20482f4b18ca9f77

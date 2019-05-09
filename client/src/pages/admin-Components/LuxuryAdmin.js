@@ -28,7 +28,7 @@ class LuxuryAdmin extends Component {
         fetch('/api/get_photos/luxury')
             .then(res => res.json())
             .then(arrPhoto => this.setState({ arrPhoto: arrPhoto.resources }));
-        // console.log(this.state.list);
+        console.log(this.state.list);
     }
 
     handleClick = (url) => {
@@ -73,7 +73,7 @@ class LuxuryAdmin extends Component {
                         <button className="btn-outline-dark btn-sm btn-back">Back</button>
                     </Link> 
                     </div>
-                    <hr></hr>
+                    
                 </div>
                 <div className="photo-container-admin">
                     {photosUrl.map(images => (
