@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import queryString from "query-string";
 import LOCALAPI from '../utils/local-auth';
+import './signUp.css';
 import { Link, Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
   
   state = {
+    name: "",
     email: "",
     password: "",
     errorMessage: null
@@ -26,28 +28,13 @@ handleInputChange = event => {
 handleFormSubmit = event => {
     event.preventDefault();
     console.log(event.target);
-    LOCALAPI.loginUser({
+    LOCALAPI.signupUser({
         user_email: this.state.email,
+        user_name: this.state.name,
         user_password: this.state.password
-    }).then( response => {
-        let user = response.data;
-        // make sure we have an email
-        if(user && user.email){
-            this.props.setUser(user);
-            this.setState({
-                errorMessage: null
-            });
-        }
-        else{
-            this.setState({
-                errorMessage: "Could not log in"
-            });
-        }
-    }).catch( error => {
-        this.setState({
-            errorMessage: "Could not log in"
-        });
-    })
+    }).then(res =>{
+      console.log(res)
+    });
 }
 
 
@@ -60,21 +47,31 @@ handleFormSubmit = event => {
 }
 
   render() {
-    if(this.props.user && this.props.user.email){
-      return <Redirect to="/personal-account"/>;
-  }
     return (
-      <div className="login" >
-        {/* <h1>SignUp Page</h1> */}
-
-        <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin">
-              <div class="form-label-group">
+      <div className='login '>
+      <div>
+        <div className='container-fluid '>
+      
+        <div className="limiter">
+  <div className="container-login100">
+    <div className="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+    <form className="login100-form validate-form">
+    <span className="login100-form-title p-b-55 header">
+						Login
+					</span>
+              <div className="wrap-input100 validate-input m-b-16">
+              <label htmlFor="email">Name:</label>
+                        <input
+                        value={this.state.name}
+                        onChange={this.handleInputChange}
+                        name="name"
+                        type="text"
+                        className="form-control"
+                        placeholder="Type in name"
+                        id="name"
+                        />
+              </div>
+              <div className="wrap-input100 validate-input m-b-16">
               <label htmlFor="email">Email:</label>
                         <input
                         value={this.state.email}
@@ -87,7 +84,7 @@ handleFormSubmit = event => {
                         />
               </div>
 
-              <div class="form-label-group">
+              <div className="wrap-input100 validate-input m-b-16">
               <label htmlFor="password">Password:</label>
                         <input
                         value={this.state.password}

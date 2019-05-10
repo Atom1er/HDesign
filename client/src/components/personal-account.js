@@ -8,7 +8,7 @@ class PersonalAccount extends Component {
 
     state = {
         item: [],
-        name: this.props.user.email
+        name: this.props.user.name
     }
 
     componentDidMount() {
@@ -49,12 +49,14 @@ class PersonalAccount extends Component {
                 {this.props.user.email ? (
                     //  ${this.props.user.email}
                     <div>
-                        <h3>Welcome!!!</h3>
+                        <h3>Welcome : {this.state.name}</h3>
+                        <div className="container">
                         {favs.map(favsUrl => (
                             <Images key={favsUrl.id}
                                 url={favsUrl.item_name}
                                 handleClickDelete={this.handleClickDelete} />
                         ))}
+                        </div>
                     </div>
                 ) : (<p>{`Please sign in at `} <Link to="/">Homepage</Link> </p>)}
             </div>

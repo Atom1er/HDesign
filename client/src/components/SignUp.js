@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import LOCALAPI from '../utils/local-auth';
-import { Link, Redirect } from 'react-router-dom';
-import './local.css';
+import { Redirect } from 'react-router-dom';
+
 
 class LoginLocal extends Component{
     state = {
+        name: "",
         email: "",
         password: "",
         errorMessage: null
@@ -25,50 +26,49 @@ class LoginLocal extends Component{
     handleFormSubmit = event => {
         event.preventDefault();
         console.log(event.target);
-        LOCALAPI.loginUser({
+
+        LOCALAPI.signupUser({
+            user_name: this.state.name,
             user_email: this.state.email,
             user_password: this.state.password
-        }).then( response => {
-            let user = response.data;
-            // make sure we have an email
-            if(user && user.email){
-                this.props.setUser(user);
-                this.setState({
-                    errorMessage: null
-                });
-            }
-            else{
-                this.setState({
-                    errorMessage: "Could not log in"
-                });
-            }
-            
-        }).catch( error => {
-            this.setState({
-                errorMessage: "Could not log in"
-            });
         })
+
     }
 
 
     // componentDidMount = () => {
-    //     // AUTHAPI.getUserData().then( userResponse => {
-    //     //     if(userResponse.data){
-    //     //         this.props.setUser(userResponse.data);
-    //     //     }
-    //     // })
+    //     AUTHAPI.getUserData().then( userResponse => {
+    //         if(userResponse.data){
+    //             this.props.setUser(userResponse.data);
+    //         }
+    //     })
     // }
+
+
     render() {
         if(this.props.user && this.props.user.email){
-            return this.props.user.name == 'Admin' ? (<Redirect to="/admin"/>) :(<Redirect to="/"/>);
+            return <Redirect to="/"/>;
         }
         return (
             <div class="container ">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5 bg-light">
             <div class="card-body">
-            <h5 class="card-title text-center" >Log In</h5>
+            <h5 class="card-title text-center header">Sign Up</h5>
                 <form className="form-signin">
+                    <div className="form-label-group">
+                        <div>Name:</div>
+                        <label htmlFor="name" />
+                        <input
+                        value={this.state.name}
+                        onChange={this.handleInputChange}
+                        name="name"
+                        type="text"
+                        className="form-control"
+                        placeholder="Type in name"
+                        id="name"
+                        />
+                    </div>
                     <div className="form-label-group">
                         <div>Email:</div>
                         <label htmlFor="email" />
@@ -97,7 +97,7 @@ class LoginLocal extends Component{
                     </div>
                                     
                     <button type="submit" onClick={this.handleFormSubmit} className="mt-2 btn-sm btn-primary text-uppercase">
-                        LogIn
+                        Signup
                         </button>
                     </form>
                     {this.state.errorMessage}

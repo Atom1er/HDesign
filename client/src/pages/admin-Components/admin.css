@@ -1,18 +1,17 @@
 .container-admin{
-    /* margin: 0 auto; */
+    margin: 0 auto;
     /* border: solid black 1px; */
-    /* float: right; */
     width: 80%;
     padding-left:20px; 
 }
 
 .photo-container-admin{
     border-radius: 4px;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* position: relative;  */
+    position: relative; 
     background-color: rgb(218, 218, 218);
     padding: 20px;
     
