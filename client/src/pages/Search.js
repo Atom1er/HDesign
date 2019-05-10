@@ -28,7 +28,7 @@ class Search extends React.Component {
                     <input type="text" onChange={this.handleChange} />
                 </label>
                 <Link to={{
-                    pathname: "./results/"+this.state.value,
+                    pathname: "/results/"+this.state.value,
                     state: { value: this.state.results }
                 }}
                     className="navbar-brand"

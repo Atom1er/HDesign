@@ -16,7 +16,7 @@ const Navbar = props => (
     <ul>
       <li className="nav-item"
        >
-        <Link to="./modern"
+        <Link to="/modern"
           className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }}>
           <span className="nav-hover">Modern</span>
@@ -25,7 +25,7 @@ const Navbar = props => (
 
       <li className="nav-item"
       >
-        <Link to="./luxury"
+        <Link to="/luxury"
           className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }} >
           <span className="nav-hover">Luxury</span>
@@ -35,7 +35,7 @@ const Navbar = props => (
       <li className="nav-item"
        
        >
-        <Link to="./decor"
+        <Link to="/decor"
           className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }} >
           <span className="nav-hover">Decor</span>
@@ -44,7 +44,7 @@ const Navbar = props => (
 
       <li className="nav-item"
         style={{  }}>
-        <Link to="./antique"
+        <Link to="/antique"
           className="nav-link nav-link1"
           style={{ textDecoration: "none", color: "black" }}>
           <span className="nav-hover">Antique</span>
