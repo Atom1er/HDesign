@@ -10,8 +10,8 @@ class LuxuryAdmin extends Component {
     // Initialize the state
     state = {
         arrPhoto: [],
-        showPhoto: 5,
-        showPhoto2: 10,
+        // showPhoto: 5,
+        // showPhoto2: 10,
     }
 
     // Fetch the list on first mount

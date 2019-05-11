@@ -34,64 +34,64 @@ app.post('/_api/user', (req, res) => {
             user_email: req.body.user_email
         }
     })
-    .then(function(user){
-        if(!user){
-            // if we don't have user, create
-            console.log("Will create user soon");
-            db.users.create(req.body)
-            .then( dbUser => {
-                console.log(dbUser);
-                res.json(dbUser);
-            })
-            .catch( error => {
-                console.log(error);
-                res.json({"message": "Error User Creation 1!"});
-            });
-        }
-        else{
-            // otherwise, we have the user
-            res.json({"message": "User already in DB"});
-        }
-        
-    })
-    .catch( error => {
-        console.log(error);
-        res.json({message: "Error User creation 2!"});
-    });
-    
+        .then(function (user) {
+            if (!user) {
+                // if we don't have user, create
+                console.log("Will create user soon");
+                db.users.create(req.body)
+                    .then(dbUser => {
+                        console.log(dbUser);
+                        res.json(dbUser);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        res.json({ "message": "Error User Creation 1!" });
+                    });
+            }
+            else {
+                // otherwise, we have the user
+                res.json({ "message": "User already in DB" });
+            }
+
+        })
+        .catch(error => {
+            console.log(error);
+            res.json({ message: "Error User creation 2!" });
+        });
+
 });
 
 ////User Login
-app.post('/_api/user/login', 
-passport.authenticate('local'),
-function(req, res) {
-    // req.user comes from passport
-    if(req.user){
-        let temp = {};
-        temp.email = req.user.user_email;
-        temp.name = req.user.user_name;
-        res.json(temp);
-    }
-    else{
-        res.json(false);
-    }
-});
+app.post('/_api/user/login',
+    passport.authenticate('local'),
+    function (req, res) {
+        // req.user comes from passport
+        if (req.user) {
+            let temp = {};
+            temp.email = req.user.user_email;
+            temp.name = req.user.user_name;
+            res.json(temp);
+        }
+        else {
+            res.json(false);
+        }
+    });
 
 app.get('/_api/user', (req, res) => {
     // req.user comes from passport
-    if(req.user){
+    if (req.user) {
         let temp = {};
         temp.email = req.user.user_email;
         temp.name = req.user.user_name;
         res.json(temp);
     }
-    else{
+    else {
         res.json(false);
     }
 });
 
 /// User LogOut
-app.get('/_api/user/logout', function(req, res){
+app.get('/_api/user/logout', function (req, res) {
     req.logout();
     res.json(true);
 });
@@ -148,7 +148,7 @@ app.get('/api/get_photos/decor', (req, res) => {
         }
     );
 });
-
+//TO DO: delete image from cloud from admin site //
 app.post('/api/cloud/public_id', (req, res) => {
     var public = req.body.publicId;
     console.log(public)
@@ -168,6 +168,19 @@ app.post('/api/cloud/user/search', (req, res) => {
             res.json(result);
         });
  })
+
+//TO DO: Search image from home page search engine //
+app.post('/api/cloud/user/search', (req, res) => {
+    var searchUser = req.body.value;
+    // console.log('testt!!!!!!!!' + searchUser);
+    cloudinary.v2.api.resources_by_tag(searchUser,
+        {max_results: 100},
+        function (err, result) {
+            // console.log(result)
+            res.json(result);
+        });
+})
+
 
 cloudinary.config({
     cloud_name: Keys.cloud_name,
@@ -189,7 +202,7 @@ app.get("/api/db/users", (req, res) => {
 app.post("/api/db/favItems", (req, res) => {
     db.favItems.create({
         // user_email: myEmail.slice(-1)[0],
-        user_email: req.body.user_email, 
+        user_email: req.body.user_email,
         item_name: req.body.item_name
     }).then((results) => {
         res.json(results);
@@ -222,24 +235,23 @@ app.post("/api/db/createUser", (req, res) => {
 //TO DO: user site getting images based on user email//
 app.get("/api/db/favItems/users", (req, res) => {
     var favItemEmail = req.user.dataValues.user_email;
-    myEmail.push(favItemEmail);
+    console.log(favItemEmail);
+    // myEmail.push(favItemEmail);
     //console.log("Tessstttt "+Object.keys(req.user.dataValues));
-    if(req.user.dataValues.user_email){
+    if (req.user.dataValues.user_email) {
         db.favItems.findAll({
             where: {
                 user_email: req.user.dataValues.user_email
             }
-     
+
         }).then((results) => {
-            res.json(results); 
+            res.json(results);
             // console.log(results);
         });
     }
-    
- });
 
+});
 
- var myEmail = [];
 // console.log('thiesfdslkfsldkf' + myEmail);
 
 // Handles any requests that don't match the ones above

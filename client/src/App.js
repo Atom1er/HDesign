@@ -10,7 +10,7 @@ import LoginLocal from './components/login-local';
 import PersonalAccount from './components/personal-account';
 import Logout from './components/logout';
 import Users from './components/Users';
-import Results from "./pages/Results";
+// import Results from "./pages/Results";
 
 import PhotoWidgetUploader from './components/PhotoWidgetUploader';
 import UsersDb from './components/UsersDb';
@@ -26,6 +26,8 @@ import "./components/Container.css";
 
 import NavbarMain from "./components/Navbar-main/Navbar-main";
 import NavbarUser from "./components/Navbar-user/Navbar-user";
+import Search from "./pages/Search";
+import Results from "./pages/Results";
 
 import Admin from './pages/Admin';
 import SignUp from './components/SignUp';
@@ -62,8 +64,6 @@ class App extends Component {
     LocalAPI.getLogout().then((res)=>{
       this.setUser({});
       return <Redirect to='/'/>
-      
-
     })
   }
 
@@ -76,6 +76,8 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+      {this.props.children}
       <Router>
         <Container>
 
@@ -111,6 +113,7 @@ class App extends Component {
           {/* <Footer /> */}
         </Container>
       </Router>
+      </div>
     );
 
 

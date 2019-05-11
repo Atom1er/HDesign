@@ -8,9 +8,7 @@ let AUTHAPI = {
     getUserData: () => {
         return axios.get('/_api/user');
     },
-    getLogout: () => {
-        return axios.get('/_api/user/logout');
-    }
+   
 }
 
 export default AUTHAPI;

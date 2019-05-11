@@ -33,6 +33,7 @@ class NavbarUser extends React.Component {
           style={{ textDecoration: "none", color: "black" }}>
           <span className="md"><img className="md-logo" src="./hdesign.png" width="100px" height="50px" alt="hdesign logo"></img></span>
         </Link>
+        
 
         <ul>
           <Search />
@@ -43,8 +44,6 @@ class NavbarUser extends React.Component {
           {(this.props.user ? (<li className="nav-item"><Link className="nav-link" style={{ textDecoration: "none", color: "black" }}> <p onClick={this.props.logOut}className="nav-hover"><i className="far fa-user"></i> Log Out</p> </Link></li>) : "")}
 
         </ul>
-
-
       </nav>
     )
   }
@@ -55,7 +54,6 @@ class NavbarUser extends React.Component {
 
 
 
-   
 
 
 export default NavbarUser;

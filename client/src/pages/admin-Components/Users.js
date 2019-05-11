@@ -41,7 +41,7 @@ class Users extends Component {
                 <div className='new-photo-admin'>
                     <h3><strong>Users</strong></h3>
                     <hr></hr>
-                    <p>Make sure to include "Luxury" tag in "advance options" when upload new photo</p>
+                    <p>Current users in the system</p>
                     <div className="back-btn-admin">
 
                     </div>
@@ -49,14 +49,15 @@ class Users extends Component {
                 </div>
                 <div className="photo-container-admin">
                     {arr.map(user => (
-                    <table>
-                    <tr>
-                        <td>{user.user_name}{user.user_email}</td> 
+                    <ul>
+                    
+                        <li>{user.user_name}{user.user_email}</li> <span> {user.user_email}</span>
+
                         
-                    </tr>
                     
                     
-                    </table>))}
+                    
+                    </ul>))}
                 </div>
             </div>
         );
