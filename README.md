@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## HDESIGN
+
+##OVERVIEW
+HDesign is a website for all of those who are looking for nice home decore. Divided in 4 categories, the user can create an account and save all the models they like.
+[Visit](https://final-project-226.herokuapp.com/)
+
+![Picture](https://atom1er.github.io/thomas-portfolio/assets/images/Friend-Finder.png)
+
+## TECH USED
+The website has been built with NodeJS, ExpressJS, ReactJS, PassportJS, Bootstrap, Cloudinary and Deployed on Heroku.
 
 ## Available Scripts
 
