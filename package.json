@@ -37,7 +37,7 @@
     "react-medium-zoom": "^1.0.0",
     "react-parallax": "^2.2.0",
     "react-scroll-parallax": "^2.1.2",
-    "sequelize": "^5.7.4",
+    "sequelize": "^5.15.1",
     "yarn": "^1.15.2"
   },
   "devDependencies": {},
