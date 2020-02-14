@@ -38,7 +38,7 @@
     "react-parallax": "^2.2.0",
     "react-scroll-parallax": "^2.1.2",
     "sequelize": "^5.7.4",
-    "yarn": "^1.15.2"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {},
   "repository": {
